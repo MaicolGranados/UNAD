@@ -1,0 +1,6 @@
+30/03/2025 1:02:35 a. m.
+CLASE: ArticulosController.Edit(Model)
+MENSAJE: System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at FUNSAR.Areas.Admin.Controllers.ArticulosController.Edit(ArticuloVM artivm)
+

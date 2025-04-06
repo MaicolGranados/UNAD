@@ -1,0 +1,8 @@
+6/04/2025 2:57:14 p. m.
+CLASE: Index.cshtml
+MENSAJE: System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.OrderedEnumerable`2..ctor(IEnumerable`1 source, Func`2 keySelector, IComparer`1 comparer, Boolean descending, OrderedEnumerable`1 parent)
+   at System.Linq.Enumerable.OrderBy[TSource,TKey](IEnumerable`1 source, Func`2 keySelector)
+   at AspNetCoreGeneratedDocument.Areas_Cliente_Views_Home_Index.ExecuteAsync() in C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Views\Home\Index.cshtml:line 807
+

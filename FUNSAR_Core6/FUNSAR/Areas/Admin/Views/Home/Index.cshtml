@@ -1,0 +1,36 @@
+﻿@using FUNSAR.Models.ViewModels
+@using FUNSAR.HerramientasComunes
+@model HomeVM
+@{
+    ViewData["Title"] = "Busqueda y Rescate";
+}
+        <!-- Título -->
+        <div class="text-center mb-4 mt-5">
+            <h1 class="fw-bold">¡Bienvenido a tu espacio!</h1>
+            <p class="lead">Organiza tus actividades y gestiona los participantes con facilidad.</p>
+        </div>
+
+    @if (User.IsInRole(FUNSAR.Utilidades.CNT.Gestor))
+    {
+        <!-- Botón principal -->
+        <div class="text-center mb-5">
+            <button class="btn btn-primary btn-lg px-5 py-3" id="btnBrigada"> Cargando...</button>
+        </div>
+    }
+    <!-- Sección de estudiantes -->
+    <div class="row text-center mb-5">
+        <div class="col-md-4 offset-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-people-fill display-4 text-primary mb-3"></i>
+                    <h4 class="card-title">Participantes en Proceso</h4>
+                    <h2 class="fw-bold text-success" id="estudiantesContador">Cargando...</h2>
+                    <p class="card-text">Número total de participantes inscritos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@section Scripts{
+    <script src="~/js/IndexLogin.js"></script>
+}

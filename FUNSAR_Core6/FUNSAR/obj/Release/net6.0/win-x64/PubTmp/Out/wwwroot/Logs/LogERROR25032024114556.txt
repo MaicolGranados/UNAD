@@ -1,0 +1,7 @@
+25/03/2024 11:45:56 p. m.
+CLASE: HomeController.Procesarpago()
+MENSAJE: MercadoPago.Error.MercadoPagoApiException: Error response from API. | Status code: 500 | API message: Oops! Something went wrong...
+   at MercadoPago.Client.MercadoPagoClient`1.ParseResponse[TResponse](MercadoPagoResponse response)
+   at MercadoPago.Client.MercadoPagoClient`1.SendAsync[TResponse](String path, HttpMethod httpMethod, Object request, RequestOptions requestOptions, CancellationToken cancellationToken)
+   at FUNSAR.Areas.Cliente.Controllers.HomeController.ProcesarPago(ProcesoPagoVM procvm) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 687
+

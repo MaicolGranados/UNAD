@@ -1,0 +1,169 @@
+﻿@model FUNSAR.Models.ViewModels.ArticuloVM
+
+@{
+    ViewData["Title"] = "Crear Articulo";
+}
+<br />
+<br />
+<h3 class="text-center">Crear nuevo articulo</h3>
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Articulo.Nombre"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Articulo.Nombre" class="form-control" placeholder="Ingresa el nombre del articulo" />
+                    <span asp-validation-for="Articulo.Nombre" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Articulo.Descripcion"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <textarea asp-for="Articulo.Descripcion" class="form-control" placeholder="Ingresa el detalle del articulo"></textarea>
+                    <span asp-validation-for="Articulo.Descripcion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="Categoria">Categoria</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.Articulo.CategoriaId, Model.ListaCategorias, "-Seleccione una categoria-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="Servicio">Servicio</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.Articulo.ServicioId, Model.ListaServicio, "-Seleccione el servicio-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Articulo.UrlImagen"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input type="file" name="archivos" class="form-control" />
+                    <span asp-validation-for="Articulo.UrlImagen" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Articulo.UrlDocumento"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input type="file" name="archivos" class="form-control" />
+                    <span asp-validation-for="Articulo.UrlDocumento" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label for="BrigadaId">Brigadas</label>
+                </div>
+                <div class="col-6">
+                    <div id="brigadaContainer"></div>
+                    <button type="button" class="btn btn-primary" onclick="addBrigada()">Agregar Brigada</button>
+                    <input type="hidden" id="brigadaIds" name="Articulo.BrigadaId" />
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 m-lg-4">
+                <div class="col-8">
+                    <partial name="_VistaCrearVolver" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        var brigadaOptions = string.Join("", Model.ListaBrigadas.Select(b => $"<option value='{b.Value}'>{b.Text}</option>"));
+    }
+    <script>
+        let brigadaCount = 0;
+        let selectedBrigadas = []; // Array para almacenar las brigadas seleccionadas
+
+        function addBrigada() {
+            const container = document.getElementById("brigadaContainer");
+
+            const newDiv = document.createElement("div");
+            newDiv.className = "input-group mb-2";
+
+            const select = document.createElement("select");
+            select.className = "form-control brigada-select";
+            select.onchange = updateBrigadaIds;
+
+            // Genera las opciones desde el cliente filtrando las seleccionadas
+            select.innerHTML = getAvailableOptions();
+
+            const removeButton = document.createElement("button");
+            removeButton.type = "button";
+            removeButton.className = "btn btn-danger";
+            removeButton.innerText = "-";
+            removeButton.onclick = function () {
+                const valueToRemove = select.value;
+                container.removeChild(newDiv);
+                selectedBrigadas = selectedBrigadas.filter(value => value !== valueToRemove); // Remover de las seleccionadas
+                updateBrigadaIds();
+            };
+
+            newDiv.appendChild(select);
+            newDiv.appendChild(removeButton);
+            container.appendChild(newDiv);
+
+            brigadaCount++;
+        }
+
+        function getAvailableOptions() {
+            // Opciones iniciales (sin seleccionar)
+            let options = `<option value="">-Seleccione una brigada-</option>`;
+
+            // Recorrer la lista de brigadas en el modelo y filtrar las seleccionadas
+        @foreach (var brigada in Model.ListaBrigadas)
+        {
+            <text>
+                        options += selectedBrigadas.includes('@brigada.Value') ? "" : `<option value="@brigada.Value">@brigada.Text</option>`;
+            </text>
+        }
+            return options;
+        }
+
+        function updateBrigadaIds() {
+            const selects = document.querySelectorAll(".brigada-select");
+            selectedBrigadas = Array.from(selects)
+                .map(select => select.value)
+                .filter(value => value !== "");
+
+            const hiddenInput = document.getElementById("brigadaIds");
+            hiddenInput.value = selectedBrigadas.join(",");
+        }
+    </script>
+}

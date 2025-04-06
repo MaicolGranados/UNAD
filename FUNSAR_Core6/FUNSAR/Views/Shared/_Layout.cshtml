@@ -1,0 +1,240 @@
+﻿@using FUNSAR.Utilidades
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="W4oKn_NR0rI98JEhjYRpH01p5K_GgbnPakrbOAHVLj8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="FUNSAR, Busqueda y Rescate, socorrista">
+    <meta name="description" content="La Fundacion de Busqueda y rescate FUNSAR, tiene como objetivo capacitar a los jovenes y comunidades en gestion del riesgo">
+    <title>FUNSAR - @ViewData["Title"]</title>
+    <link href="~/img/logo.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FUNSAR.styles.css" asp-append-version="true" />
+
+    <!--Css Plugin-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navClass bg-primary" data-bs-theme="dark" style="background: linear-gradient(90deg, rgba(44, 62, 80, 1) 0%, rgba(36, 52, 70, 1) 40%, rgba(28, 42, 60, 1) 70%, rgba(20, 32, 50, 1) 100%);">
+            <div class="container">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a class="navbar-brand" asp-area="Admin" asp-controller="Home" asp-action="Index">
+                        <img src="/img/logo.png" alt="Logo FUNSAR" width="55" height="55" class="rounded-circle">
+                    </a>
+                }
+                else
+                {
+                    <a class="navbar-brand" asp-area="Cliente" asp-controller="Home" asp-action="Index">
+                        <img src="/img/logo.png" alt="Logo FUNSAR" width="55" height="55" class="rounded-circle">
+                    </a>
+
+                }
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        
+
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="https://www.funsar.org.co/#Servicios">Servicios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="https://www.funsar.org.co/#Contacto">Contacto</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Servicio Social</a>
+                                <div class="dropdown-menu">
+                                    <button type="button" class="dropdown-item" data-toggle="modal" onclick="ModalRegistro()">
+                                        Registro Participante
+                                    </button>
+                                    <button type="button" class="dropdown-item" data-toggle="modal" onclick="ModalConsultar()">
+                                        Consultar Proceso
+                                    </button>
+                                    <a class="dropdown-item" href="~/Docs/AutorizacionSSE_2025.pdf">Descarga Autorización</a>
+                                </div>
+                            </li>
+                        }
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            
+                            @if (User.IsInRole(CNT.SuperAdmin))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administración</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Articulos" asp-action="Index">Actividades</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Certificados" asp-action="Index">Certificados</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Pagos" asp-action="Index">Pagos</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Reportes" asp-action="Index">Reportes</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Configuración</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Categorias" asp-action="Index">Categorías</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Params" asp-action="Index">Parametros</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Servicios" asp-action="Index">Servicios</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Sliders" asp-action="Index">Sliders</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="VigenciaServicios" asp-action="Index">Vigencia Servicios</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Brigadas</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Asistencias" asp-action="Index">Asistencias</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Brigadas" asp-action="Index">Brigadas</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Colegios" asp-action="Index">Colegios</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Voluntarios" asp-action="Index">Participantes</a>
+                                    </div>
+                                </li>
+                            }
+                            @if (User.IsInRole(CNT.Administrativo))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administración</a>
+                                    <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Certificados" asp-action="Index">Certificados</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Pagos" asp-action="Index">Pagos</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Reportes" asp-action="Index">Reportes</a>
+                                    </div>
+                                </li>
+                                
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Brigadas</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Asistencias" asp-action="Index">Asistencias</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Brigadas" asp-action="Index">Brigadas</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Colegios" asp-action="Index">Colegios</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Voluntarios" asp-action="Index">Participantes</a>
+                                    </div>
+                                </li>
+                            }
+                            @if (User.IsInRole(CNT.Gestor))
+                            {
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Adminsitración</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Pagos" asp-action="Index">Pagos</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Brigadas</a>
+                                    <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Asistencias" asp-action="Index">Asistencias</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Colegios" asp-action="Index">Colegios</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Voluntarios" asp-action="Index">Participantes</a>
+                                    </div>
+                                </li>
+                            }
+                            @if (User.IsInRole(CNT.Division))
+                            {
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Adminsitración</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Pagos" asp-action="Index">Pagos</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Brigadas</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Asistencias" asp-action="Index">Asistencias</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Voluntarios" asp-action="Index">Participantes</a>
+                                    </div>
+                                </li>
+                            }
+                            @if (User.IsInRole(CNT.Colegio))
+                            {
+                                
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administración</a>
+                                    <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Asistencias" asp-action="Index">Asistencias</a>
+                                <a class="dropdown-item" asp-area="Admin" asp-controller="Reportes" asp-action="Index">Reportes</a>
+                                    </div>
+                                </li>
+                            }
+                                
+                        }
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @DateTime.Now.Year.ToString() - FUNSAR - Busqueda y Rescate
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Js plugins-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f48d8c00d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/044d66be35.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    
+
+    <div class="modal fade" id="MostrarModalRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Politica de protección de datos</h5>
+                </div>
+
+                <div class="modal-body">
+
+                    <p>
+                        <b>Ley de Protección de Datos Personales 1581 de 2012</b>
+                        La Fundación de Búsqueda y Rescate FUNSAR esta comprometida a la protección de los datos con la transparencia y buen uso la información personal de todos sus integrantes. Siendo promotores de la protección de derechos como el Habeas Data, la privacidad, la
+                        intimidad y el buen nombre. Garantizando que todas sus actuaciones se regirán de buena fe y  legalidad.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                    <a class="btn btn-primary" asp-area="Cliente" asp-controller="Home" asp-action="Registro">Aceptar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        
+        function ModalRegistro() {
+            $('#MostrarModalRegistro').modal('show');
+        };
+
+    </script>
+
+</body>
+</html>

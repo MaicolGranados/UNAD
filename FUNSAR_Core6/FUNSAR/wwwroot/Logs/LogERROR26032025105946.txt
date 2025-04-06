@@ -1,0 +1,19 @@
+26/03/2025 10:59:46 p. m.
+CLASE: ReportesController.Generate()
+MENSAJE: System.InvalidOperationException: The LINQ expression 'DbSet<Certificado>()
+    .Where(c => __documentosParticipantes_0.Contains(c.Documento) && Convert.ToDateTime(c.FechaExpedicion).Year == __8__locals2_report_fechaFin_Value_Year_1)' could not be translated. Additional information: Translation of method 'System.Convert.ToDateTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information.
+Translation of method 'System.Convert.ToDateTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|15_0(ShapedQueryExpression translated, <>c__DisplayClass15_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass9_0`1.<Execute>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at FUNSAR.AccesoDatos.Data.Repository.Repository`1.GetALL(Expression`1 filter, Func`2 orderBy, String includeProperties) in C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.AccesoDatos\Data\Repository\Repository.cs:line 59
+   at FUNSAR.Areas.Admin.Controllers.ReportesController.Generate(ReporteVM report) in C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\ReportesController.cs:line 386
+

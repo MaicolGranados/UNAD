@@ -1,0 +1,57 @@
+﻿@model FUNSAR.Models.ViewModels.CertificadoVM
+@{
+    ViewData["Title"] = "Carga Masiva";
+}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-7">
+            <h2 class="text-primary">Certificados - Carga Masiva</h2>
+        </div>
+        <div class="col-5 text-bg-danger-rigth">
+            @using (Html.BeginForm("Upload", "Certificados", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+                @Html.AntiForgeryToken();
+                <div class="form-group">
+                    @Html.LabelFor(d => d.file)
+                    @Html.TextBoxFor(d => d.file, new {@class="form-control",type="file",accept=".xlsx"})
+                    @Html.ValidationMessageFor(d=>d.file,"", new {@class="text-danger"})
+                </div>
+                <div class="form-group" style="text-align:right;">
+                    <a class="btn btn-primary mt-3" href="~/Docs/PlantillaCertificados.xlsx">Descarga Plantilla</a>
+                    <input type="submit" class="btn btn-primary mt-3" value="Cargar Excel"/>
+                </div>
+            }
+        </div>
+        <div class="col-12 text-bg-danger-rigth">
+            @using (Html.BeginForm("CargaSQL", "Certificados", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group" style="text-align:right;">
+                    <input type="submit" class="btn btn-primary mt-3" value="Subir Datos" />
+                </div>
+            }
+        </div>
+        
+    </div>
+    <br />
+
+    <table id="tblCertificados" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Tipo</th>
+                <th>Documento</th>
+                <th>Brigada</th>
+                <th>Año Proceso</th>
+                <th>Semestre</th>
+                <th>Expedicion</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/js/certificadosTemp.js"></script>
+}

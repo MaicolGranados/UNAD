@@ -1,0 +1,5 @@
+3/04/2025 8:21:54 a. m.
+CLASE: ArticulosController.Edit()
+MENSAJE: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FUNSAR.Areas.Admin.Controllers.ArticulosController.Edit(Nullable`1 id)
+

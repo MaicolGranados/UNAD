@@ -1,0 +1,128 @@
+﻿@model FUNSAR.Models.ViewModels.CertificadoVM
+
+@{
+    ViewData["Title"] = "Registrar Certificado";
+}
+<br />
+<br />
+<h3 class="text-center">Crear nuevo certificado</h3>
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Certificado.Nombre"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Certificado.Nombre" class="form-control" placeholder="Ingresa el nombre del personal" />
+                    <span asp-validation-for="Certificado.Nombre" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Certificado.Apellido"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Certificado.Apellido" class="form-control" placeholder="Ingresa el apellido del personal"></input>
+                    <span asp-validation-for="Certificado.Apellido" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="TDocumento">Tipo Documento</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.Certificado.DocumentoId, Model.tipoDoc, "-Seleccione tipo de documento-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Certificado.Documento"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Certificado.Documento" class="form-control" placeholder="Ingresa el numero de documento"></input>
+                    <span asp-validation-for="Certificado.Documento" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="Semestre">Semestre</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.Certificado.SemestreId, Model.semestre, "-Seleccione un semestre-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="Brigada">Brigada</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.Certificado.BrigadaId, Model.ListaBrigadas, "-Seleccione una brigada-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="Proceso">Proceso</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.Certificado.ProcesoId, Model.ListaProceso, "-Seleccione una brigada-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Certificado.AnoProceso"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Certificado.AnoProceso" class="form-control" placeholder="Ingresa el año del proceso"></input>
+                    <span asp-validation-for="Certificado.AnoProceso" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 m-lg-4">
+                <div class="col-8">
+                    <partial name="_VistaCrearVolver" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@*@section Scripts{
+    <script src="https://cdn.tiny.cloud/1/umo09xaejz8cuvu6bikflm7gvuyh7f96i717yiy8nojblb61/tinymce/6/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'lists',
+            menubar: 'file edit format'
+        });
+    </script>
+}*@

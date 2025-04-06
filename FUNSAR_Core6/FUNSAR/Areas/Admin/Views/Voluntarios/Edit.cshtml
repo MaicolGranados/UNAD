@@ -1,0 +1,199 @@
+﻿@using FUNSAR.Models.ViewModels
+@using FUNSAR.HerramientasComunes
+@model FUNSAR.Models.ViewModels.VoluntarioVM
+
+@{
+    ViewData["Title"] = "Editar Voluntario";
+}
+@try
+{
+    <br />
+    <br />
+    <h3 class="text-center">Editar Voluntario</h3>
+    <form method="post" asp-action="Edit" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Voluntario.Id" />
+        <input type="hidden" asp-for="PFE.VoluntarioId" />
+        <div class="row px-2 offset-1 border">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-9 mt-4">
+
+                @if (Model.Acudiente != null)
+                {
+                    <div class="form-group row">
+                        <div class="offset-6 col-6">
+                            <a asp-action="Acudiente" asp-controller="Voluntarios" asp-route-id="@Model.Acudiente.Id" class="btn btn-primary">Datos Acudiente</a>
+                            @*<button type="submit" class="btn btn-primary" asp-route-id="@Model.Acudiente.Id">Datos Acudiente</button>*@
+                        </div>
+                    </div>
+
+                }
+
+                <div class="form-group row mt-4">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label for="Brigada">Proceso</label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        @Html.DropDownListFor(m => m.Voluntario.ProcesoId, Model.ListaProceso, "-Seleccione una brigada-",
+                    new {@class = "form-control"})
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label asp-for="Voluntario.Nombre"></label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for="Voluntario.Nombre" class="form-control" placeholder="Ingresa el nombre del personal" />
+                        <span asp-validation-for="Voluntario.Nombre" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-4">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label asp-for="Voluntario.Apellido"></label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for="Voluntario.Apellido" class="form-control" placeholder="Ingresa el apellido del personal"></input>
+                        <span asp-validation-for="Voluntario.Apellido" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-4">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label for="TDocumento">Tipo Documento</label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        @Html.DropDownListFor(m => m.Voluntario.DocumentoId, Model.ListaTipoDocumento, "-Tipo de documento-",
+                    new {@class = "form-control"})
+                    </div>
+                </div>
+
+                <div class="form-group row mt-4">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label asp-for="Voluntario.Documento"></label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for="Voluntario.Documento" class="form-control" placeholder="Ingresa el numero de documento"></input>
+                        <span asp-validation-for="Voluntario.Documento" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-4">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label for="Brigada">Colegio</label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        @Html.DropDownListFor(m => m.Voluntario.ColegioId, Model.ListaColegio, "-Seleccione una brigada-",
+                    new {@class = "form-control"})
+                    </div>
+                </div>
+
+                <div class="form-group row mt-4">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label asp-for="Voluntario.correo"></label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for="Voluntario.correo" class="form-control" placeholder="Ingresa el correo"></input>
+                        <span asp-validation-for="Voluntario.correo" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-4">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label asp-for="Voluntario.telefono"></label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for="Voluntario.telefono" class="form-control" placeholder="Ingresa el telefono"></input>
+                        <span asp-validation-for="Voluntario.telefono" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-4">
+                    <div class="col-6">
+                        <label class="col-4">
+                            <label for="Estado">Estado Voluntario</label>
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        @Html.DropDownListFor(m => m.Voluntario.EstadoId, Model.ListaEstado, "-Seleccione el estado-",
+                    new {@class = "form-control"})
+                    </div>
+                </div>
+
+                @if (Model.PFE != null)
+                {
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label asp-for="PFE.Detalle"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <textarea asp-for="PFE.Detalle" class="form-control" placeholder="Ingresa el detalle del plan familar de emergencias"></textarea>
+                            <span asp-validation-for="PFE.Detalle" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label for="Estado">Estado PFE</label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            @Html.DropDownListFor(m => m.PFE.EstadoPFEId, Model.ListaEstadoPFE, "-Estado PFE-",
+                    new {@class = "form-control"})
+                        </div>
+                    </div>
+
+                }
+
+
+                <div class="form-group row mt-4 m-lg-4">
+                    <div class="col">
+                        <button type="submit" class="btn btn-outline-primary form-control" asp-route-id="@Model.Voluntario.Id">Actualizar</button>
+                    </div>
+                    <div class="col">
+                        <a asp-action="Index" class="btn btn-success form-control">Volver a Lista</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </form>
+
+    @*@section Scripts{
+    <script src="https://cdn.tiny.cloud/1/umo09xaejz8cuvu6bikflm7gvuyh7f96i717yiy8nojblb61/tinymce/6/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'lists',
+            menubar: 'file edit format'
+        });
+    </script>
+}*@
+}
+catch (Exception ex)
+{
+    Log log = new Log();
+    await log.escribirLog("ERROR", ex.ToString(), "RegistroParticimante.cshtml");
+}

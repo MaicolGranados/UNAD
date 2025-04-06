@@ -1,0 +1,35 @@
+﻿@model FUNSAR.Models.Voluntario
+@{
+    ViewData["Title"] = "Editar Asistencia";
+
+}
+<div id="dataContainer"
+     data-id="@Model.Id"
+</div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-8">
+            <h2 class="text-primary">Editar asistencia para: @Model.Nombre @Model.Apellido</h2>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <table id="tblAsistenciaEdit" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fecha</th>
+                <th>Asistencia</th>
+            </tr>
+        </thead>
+    </table>
+
+    <button id="sendDataBtn" class="btn btn-primary mt-3">Actualizar</button>
+    <a asp-action="Index" class="btn btn-success mt-3">Volver a lista</a>
+</div>
+
+@section Scripts{
+    <script src="~/js/asistenciaEdit.js"></script>
+}

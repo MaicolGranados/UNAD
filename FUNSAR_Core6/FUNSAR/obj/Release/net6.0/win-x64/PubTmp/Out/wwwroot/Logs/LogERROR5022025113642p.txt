@@ -1,0 +1,5 @@
+5/02/2025 11:36:42 p. m.
+CLASE: AsistenciasController.SaveTableData
+MENSAJE: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FUNSAR.Areas.Admin.Controllers.AsistenciasController.SaveTableData(List`1 tableData, String dateIn) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\AsistenciasController.cs:line 228
+

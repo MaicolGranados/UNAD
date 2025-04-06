@@ -1,0 +1,7 @@
+4/11/2024 8:57:54 p. m.
+CLASE: ReportesController.Generate()
+MENSAJE: System.ArgumentException: lastRow < firstRow || lastCol < firstCol
+   at NPOI.SS.Util.CellRangeAddress..ctor(Int32 firstRow, Int32 lastRow, Int32 firstCol, Int32 lastCol)
+   at HerramientasComunes.Excel.GenerarExcel(List`1 tiporeporte, ReporteVM report, List`1 valores, List`1 encabezados) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.HerramientasComunes\Excel.cs:line 125
+   at FUNSAR.Areas.Admin.Controllers.ReportesController.Generate(ReporteVM report) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\ReportesController.cs:line 326
+

@@ -1,0 +1,5 @@
+23/02/2024 3:40:48 p. m.
+CLASE: Index.cshtml
+MENSAJE: System.NullReferenceException: Object reference not set to an instance of an object.
+   at AspNetCoreGeneratedDocument.Areas_Cliente_Views_Home_Index.ExecuteAsync() in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Views\Home\Index.cshtml:line 199
+

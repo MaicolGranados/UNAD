@@ -1,0 +1,85 @@
+﻿@model FUNSAR.Models.Pagos
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FUNSAR.styles.css" asp-append-version="true" />
+
+</head>
+<body style="font-size:15px;">
+    <div class="imgComprobante">
+        <img src="/img/logo.png" alt="" width="60" height="60">
+        <p class="txtComprobante">Fundación de Busqueda y Rescate</p>
+    </div>
+    <div style="margin: 0 auto; width: 80%;" class="tblComprobante">
+        <H1 class="lblComprobante">Comprobante de Pago</H1>
+        <table id="tblEstadoPago" class="table table-striped table-bordered" style="width:100%; font-size:15px;">
+            <thead>
+                <tr>
+                    <th>Estado:</th>
+                    @if (Model.Estado == "approved")
+                    {
+                        <th style="background-color: #05CA82;">Aprobado</th>
+                    }
+                    @if (Model.Estado == "pending")
+                    {
+                        <th style="background-color: #EBD816;">Pendiente</th>
+                    }
+                    @if (Model.Estado == "rejected")
+                    {
+                        <th style="background-color: #EF2905;">Rechazado</th>
+                    }
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Referencia de pago:</td>
+                    <td>@Html.DisplayFor(m => m.Secuencia)</td>
+                </tr>
+                <tr>
+                    <td>Servicio pagado:</td>
+                    <td>@Html.DisplayFor(m => m.Servicio.Detalle)</td>
+                </tr>
+                <tr>
+                    <td>Valor servicio:</td>
+                    <td>$ @Html.DisplayFor(m => m.Servicio.Valor)</td>
+                </tr>
+                <tr>
+                    <td>Fecha de aprobaci&oacute;n:</td>
+                    <td>@Html.DisplayFor(m => m.Fechapago)</td>
+                </tr>
+                <tr>
+                    <td>Metodo de pago:</td>
+                    <td>PSE</td>
+                </tr>
+                <tr>
+                    <td>Numero documento:</td>
+                    <td>@Html.DisplayFor(m => m.TDocumentoR.tDocumento) @Html.DisplayFor(m => m.DocumentoR)</td>
+                </tr>
+                <tr>
+                    <td>Nombre responsable pago:</td>
+                    <td>@Html.DisplayFor(m => m.NombreR) @Html.DisplayFor(m => m.ApellidoR)</td>
+                </tr>
+                <tr>
+                    <td>Correo responsable pago:</td>
+                    <td>@Html.DisplayFor(m => m.CorreoR)</td>
+                </tr>
+                <tr>
+                    <td>Numero responsable pago:</td>
+                    <td>@Html.DisplayFor(m => m.CelularR)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footerComprobante">
+        <p>Comprobante impreso el @DateTime.Now</p>
+        <p>Para mayor información puede comunicarse via correo info@funsar.org.co</p>
+    </div>
+</body>
+</html>

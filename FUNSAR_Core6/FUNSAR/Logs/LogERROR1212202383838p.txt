@@ -1,0 +1,5 @@
+12/12/2023 8:38:38 p. m.
+CLASE: HomeController.Create(model)
+MENSAJE: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FUNSAR.Areas.Cliente.Controllers.HomeController.Create(VoluntarioVM volvm) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 300
+

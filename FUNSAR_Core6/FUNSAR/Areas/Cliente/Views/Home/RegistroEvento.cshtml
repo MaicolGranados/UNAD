@@ -1,0 +1,194 @@
+﻿@model FUNSAR.Models.ViewModels.ArticuloVM
+@using FUNSAR.HerramientasComunes
+@using FUNSAR.Models.ViewModels;
+@{
+    ViewData["Title"] = "Registro Evento";
+}
+
+@try
+{
+    @if (Model.voluntario > 0)
+    {
+        <form method="post" asp-action="GenerarPago" enctype="multipart/form-data">
+            <div class="row px-2 offset-1 border">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" name="id" value="@Model.Articulo.ServicioId" />
+                <div class="col-10 offset-1 mt-4">
+
+                    <br />
+                    <h3 class="text-center">Descargar la autorización.</h3>
+                    <p>Recuerda que debes diligenciar la autorización y llevarla el dia de la salida, puedes encontrarla en el siguiente enlace: <br /> <a href="@Model.Articulo.UrlDocumento">Autorización Salida.</a></p>
+
+
+                    <div class="form-group row mt-4 m-lg-4">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control">Continuar</button>
+                        </div>
+                        &nbsp;
+                        <div class="col">
+                            <a asp-action="Details" class="btn btn-success form-control">Volver</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    }
+    else
+    {
+        <br />
+        <h3 class="text-center">Registro Participante Salida</h3>
+        <p class="text-center">Al confirmar el registro se descargara automaticamente la autorización, recuerda llevarla diligenciada el día del evento.</p>
+        <form method="post" asp-action="RegistroEvento" enctype="multipart/form-data" id="formRegistro">
+            <div class="row px-2 offset-1 border">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col-10 offset-1 mt-4">
+                    
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label for="Articulo">Actividad</label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            @Html.DropDownListFor(m => m.Articulo.Id, Model.ListaArticulo, "-Seleccione una actividad-",
+                                     new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label asp-for="AsistenteSalida.Nombre"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="AsistenteSalida.Nombre" class="form-control" placeholder="Ingresa el nombre" />
+                            <span asp-validation-for="AsistenteSalida.Nombre" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label asp-for="AsistenteSalida.Apellido"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="AsistenteSalida.Apellido" class="form-control" placeholder="Ingresa el apellido" />
+                            <span asp-validation-for="AsistenteSalida.Apellido" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label for="TDocumento">Tipo Documento</label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            @Html.DropDownListFor(m => m.AsistenteSalida.DocumentoId, Model.ListaTipoDocumento, "-Tipo Documento-",
+                                     new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label asp-for="AsistenteSalida.Documento"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="AsistenteSalida.Documento" class="form-control" placeholder="Ingresa el documento" />
+                            <span asp-validation-for="AsistenteSalida.Documento" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label asp-for="AsistenteSalida.correo"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="AsistenteSalida.correo" class="form-control" placeholder="Ingresa el correo personal" />
+                            <span asp-validation-for="AsistenteSalida.correo" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-4">
+                                <label asp-for="AsistenteSalida.telefono"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="AsistenteSalida.telefono" class="form-control" placeholder="Ingresa el numero de contacto" />
+                            <span asp-validation-for="AsistenteSalida.telefono" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4 m-lg-4">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control">Registrar</button>
+                        </div>
+                        &nbsp;
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Volver</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    }
+}
+catch (Exception ex)
+{
+    Log log = new Log();
+    await log.escribirLog("ERROR", ex.ToString(), "RegistroEvento.cshtml");
+}
+@section Scripts{
+    <script>
+        document.getElementById("formRegistro").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            fetch("@Url.Action("RegistroEvento", "Home")", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Descargar el archivo automáticamente
+                    const link = document.createElement("a");
+                    link.href = data.downloadUrl;
+                    link.download = "autorizacion.pdf";
+                    link.click();
+
+                    // Redirigir a GenerarPago después de la descarga
+
+                            const id = document.cookie
+                              .split('; ')
+                              .find(row => row.startsWith('ServiceId='))
+                              ?.split('=')[1];
+
+                            // Verificar si el serviceId fue encontrado
+                            if (id) {
+                                // Redirigir a la acción GenerarPago con el ID obtenido
+                                window.location.href = `@Url.Action("GenerarPago", "Home")/${id}`;
+                            } else {
+                                console.error("No se encontró la cookie 'serviceId'");
+                            }
+                } else {
+                    alert(data.message || "Error en el registro.");
+                }
+            })
+            .catch(error => console.error("Error en el registro:", error));
+        });
+    </script>
+}

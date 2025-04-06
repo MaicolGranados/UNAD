@@ -1,0 +1,45 @@
+﻿@model FUNSAR.Models.Servicio
+
+@{
+    ViewData["Title"] = "Crear Servicio";
+}
+<br />
+<br />
+<h3 class="text-center">Crear nuevo servicio</h3>
+<form method="post" asp-action="Create">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Detalle"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Detalle" class="form-control" placeholder="Ingresa el nombre del servicio" />
+                    <span asp-validation-for="Detalle" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Valor"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Valor" class="form-control" placeholder="Ingresa el valor del servicio" />
+                    <span asp-validation-for="Valor" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 m-lg-4">
+                <div class="col-8">
+                    <partial name="_VistaCrearVolver" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

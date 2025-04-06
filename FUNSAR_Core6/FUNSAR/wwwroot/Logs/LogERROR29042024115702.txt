@@ -1,0 +1,9 @@
+29/04/2024 11:57:02 p. m.
+CLASE: HomeController.UpdatePDF()
+MENSAJE: System.IO.FileNotFoundException: Could not find file 'C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\72208501.pdf'.
+File name: 'C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\72208501.pdf'
+   at System.IO.File.Move(String sourceFileName, String destFileName, Boolean overwrite)
+   at System.IO.File.Move(String sourceFileName, String destFileName)
+   at FUNSAR.Areas.Cliente.Controllers.HomeController.rename(String path, String document) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 949
+   at FUNSAR.Areas.Cliente.Controllers.HomeController.UpdatePFE(IFormFile filePFE) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 551
+

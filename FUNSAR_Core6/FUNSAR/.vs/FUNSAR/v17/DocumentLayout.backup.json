@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\wwwroot\\js\\mercadopago.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:wwwroot\\js\\mercadopago.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\service\\processvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\service\\processvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\service\\paymentvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\service\\paymentvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\api\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\api\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\cliente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\cliente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAYwA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-06T20:02:46.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApiController.cs",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\API\\ApiController.cs",
+              "RelativeDocumentMoniker": "Areas\\API\\ApiController.cs",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\API\\ApiController.cs",
+              "RelativeToolTip": "Areas\\API\\ApiController.cs",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T19:56:20.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-06T19:46:06.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PaymentValidationService.cs",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Service\\PaymentValidationService.cs",
+              "RelativeDocumentMoniker": "Areas\\Service\\PaymentValidationService.cs",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Service\\PaymentValidationService.cs",
+              "RelativeToolTip": "Areas\\Service\\PaymentValidationService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowDkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T19:46:04.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProcessValidationService.cs",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Service\\ProcessValidationService.cs",
+              "RelativeDocumentMoniker": "Areas\\Service\\ProcessValidationService.cs",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Service\\ProcessValidationService.cs",
+              "RelativeToolTip": "Areas\\Service\\ProcessValidationService.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAowKEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T19:46:03.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "mercadopago.js",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\mercadopago.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\mercadopago.js",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\mercadopago.js",
+              "RelativeToolTip": "wwwroot\\js\\mercadopago.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-06T19:46:00.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Cliente\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Areas\\Cliente\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Cliente\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Areas\\Cliente\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAG0DAAAAAAAAAAAAAI8DAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T15:22:18.781Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

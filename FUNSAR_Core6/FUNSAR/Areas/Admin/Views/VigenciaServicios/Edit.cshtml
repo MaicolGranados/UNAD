@@ -1,0 +1,61 @@
+﻿@model FUNSAR.Models.ViewModels.VigenciaVM
+
+@{
+    ViewData["Title"] = "Editar Vigencia";
+}
+<br />
+<br />
+<h3 class="text-center">Editar Vigencia</h3>
+<form method="post" asp-action="Edit">
+    <input type="hidden" asp-for="VigenciaServicio.Id" />
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="Servicio">Servicio</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.VigenciaServicio.ServicioId, Model.ListaServicio, "-Seleccione un servicio-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="VigenciaServicio.Vigencia">Vigencia</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="VigenciaServicio.Vigencia" class="form-control" placeholder="Ingresa la vigencia del servicio" />
+                    <span asp-validation-for="VigenciaServicio.Vigencia" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="VigenciaServicio.Valor">Valor</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="VigenciaServicio.Valor" class="form-control" placeholder="Ingresa el valor del servicio" />
+                    <span asp-validation-for="VigenciaServicio.Valor" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 m-lg-4">
+                <div class="col">
+                    <button type="submit" class="btn btn-outline-primary form-control" asp-route-id="@Model.VigenciaServicio.Id">Actualizar</button>
+                </div>
+                <div class="col">
+                    <a asp-action="Index" class="btn btn-success form-control">Volver a Lista</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

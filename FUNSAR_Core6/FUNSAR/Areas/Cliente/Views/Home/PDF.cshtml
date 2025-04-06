@@ -1,0 +1,27 @@
+﻿@model FUNSAR.Models.Certificado
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FUNSAR.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+<img src="/img/PlantillaPDF.jpg" class="fondoPDF" />
+<div class="dataPDF">
+    <h1 class="h2PDF"><b>@Model.Nombre @Model.Apellido</b></h1>
+    <h1 class="h2PDF"><b>@Model.TDocumento.tDocumento @Model.Documento</b></h1>
+</div>
+<div class="ciudadPDF">
+    <h2 class="h3PDF">@Model.FechaExpedicion</h2>
+</div>
+<div class="codigoPDF">
+    <h4 class="h4PDF">LIBRO @Model.Semestre @Model.AnoProceso CODIGO @Model.codCertificado.Substring(0,6)</h4>
+</div>
+</body>
+</html>

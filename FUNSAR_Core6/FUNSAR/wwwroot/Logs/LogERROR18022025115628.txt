@@ -1,0 +1,44 @@
+18/02/2025 11:56:28 p. m.
+CLASE: AsistenciasController.SaveTableData
+MENSAJE: System.InvalidOperationException: The LINQ expression 'DbSet<Asistencia>()
+    .Join(
+        inner: DbSet<Voluntario>(), 
+        outerKeySelector: a => EF.Property<int?>(a, "VoluntarioId"), 
+        innerKeySelector: v => EF.Property<int?>(v, "Id"), 
+        resultSelector: (o, i) => new TransparentIdentifier<Asistencia, Voluntario>(
+            Outer = o, 
+            Inner = i
+        ))
+    .Join(
+        inner: DbSet<Colegio>(), 
+        outerKeySelector: a => EF.Property<int?>(a.Inner, "ColegioId"), 
+        innerKeySelector: c => EF.Property<int?>(c, "Id"), 
+        resultSelector: (o, i) => new TransparentIdentifier<TransparentIdentifier<Asistencia, Voluntario>, Colegio>(
+            Outer = o, 
+            Inner = i
+        ))
+    .Where(a => a.Outer.Outer.EstadoAsistenciaId != 3 && a.Inner.BrigadaId == __idBrigada_BrigadaId_0 && Convert.ToDateTime((object)a.Outer.Inner.FechaRegistro).Year == DateTime.Now.Year)' could not be translated. Additional information: Translation of method 'System.Convert.ToDateTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information.
+Translation of method 'System.Convert.ToDateTime' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.<VisitMethodCall>g__CheckTranslated|15_0(ShapedQueryExpression translated, <>c__DisplayClass15_0& )
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass9_0`1.<Execute>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at FUNSAR.AccesoDatos.Data.Repository.Repository`1.GetALL(Expression`1 filter, Func`2 orderBy, String includeProperties) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.AccesoDatos\Data\Repository\Repository.cs:line 59
+   at FUNSAR.Areas.Admin.Controllers.AsistenciasController.GetAll() in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\AsistenciasController.cs:line 75
+

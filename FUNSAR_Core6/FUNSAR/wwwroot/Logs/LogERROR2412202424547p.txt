@@ -1,0 +1,11 @@
+24/12/2024 2:45:47 p. m.
+CLASE: ArticulosController.Create(Model)
+MENSAJE: System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\wwwroot\Files\autorizaciones\1f9b58e7-b916-43d9-abc5-38482ae6a21e.pdf'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at FUNSAR.Areas.Admin.Controllers.ArticulosController.Create(ArticuloVM artivm) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\ArticulosController.cs:line 82
+

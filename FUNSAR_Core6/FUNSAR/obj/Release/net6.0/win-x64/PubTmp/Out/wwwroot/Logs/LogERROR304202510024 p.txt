@@ -1,0 +1,11 @@
+3/04/2025 1:00:24 p. m.
+CLASE: RegistroParticimante.cshtml
+MENSAJE: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Dynamic.DynamicObject' does not contain a definition for 'msg'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at AspNetCoreGeneratedDocument.Areas_Cliente_Views_Home_GenerarPago.<ExecuteAsync>b__42_1()
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Areas_Cliente_Views_Home_GenerarPago.ExecuteAsync()
+

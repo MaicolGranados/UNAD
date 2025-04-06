@@ -1,0 +1,108 @@
+﻿@using FUNSAR.Models.ViewModels
+@model FUNSAR.Models.ViewModels.VoluntarioVM
+
+@{
+    ViewData["Title"] = "Datos Acudiente";
+}
+<br />
+<br />
+<h3 class="text-center">Datos Acudiente</h3>
+<form method="post" asp-action="" enctype="multipart/form-data">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-9 mt-4">
+
+            <div class="form-group row">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Acudiente.nombre"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Acudiente.nombre" class="form-control" placeholder="Nombre del acudiente" readonly="readonly"/>
+                    <span asp-validation-for="Acudiente.nombre" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Acudiente.apellido"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Acudiente.apellido" class="form-control" placeholder="Apellido del acudiente" readonly="readonly"></input>
+                    <span asp-validation-for="Acudiente.apellido" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="TDocumento">Tipo Documento</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.Acudiente.DocumentoId, Model.ListaTipoDocumento,
+                    new {@class = "form-control", @readonly = "readonly"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Acudiente.Documento"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Acudiente.Documento" class="form-control" placeholder="Numero de documento" readonly="readonly"></input>
+                    <span asp-validation-for="Acudiente.Documento" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Acudiente.parentesco"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Acudiente.parentesco" class="form-control" placeholder="Parentesco" readonly="readonly"></input>
+                    <span asp-validation-for="Acudiente.parentesco" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Acudiente.telefono"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Acudiente.telefono" class="form-control" placeholder="Telefono" readonly="readonly"></input>
+                    <span asp-validation-for="Acudiente.telefono" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 m-lg-4">
+                <div class="col">
+                    <a asp-action="Edit" asp-route-id="@Model.Acudiente.VoluntarioId" class="btn btn-success form-control">Volver</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</form>
+
+@*@section Scripts{
+    <script src="https://cdn.tiny.cloud/1/umo09xaejz8cuvu6bikflm7gvuyh7f96i717yiy8nojblb61/tinymce/6/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'lists',
+            menubar: 'file edit format'
+        });
+    </script>
+}*@

@@ -1,0 +1,178 @@
+﻿@model FUNSAR.Models.ViewModels.ProcesoPagoVM
+@using FUNSAR.HerramientasComunes
+@using FUNSAR.Models.ViewModels;
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    ViewData["Title"] = "Proceso pago servicios";
+}
+@try
+{
+    <script>
+        window.BearerToken = '@Configuration["BearerToken"]';
+    </script>
+    <br />
+    <br />
+    <h3 class="text-center offset-1">Proceso de pago</h3>
+    <br/>
+    <form id="paymentForm" method="post" asp-action="ProcesarPago" enctype="multipart/form-data">
+
+        <div class="row px-2 border offset-1">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h4 class="text-center">Datos del servicio a pagar.</h4>
+            <div class="col-10 offset-1 mt-4">
+
+                <div id="resumePayment">
+                    <div class="form-group row mt-4">
+                        <div class="col-7">
+                            <label class="col-7">
+                                <label id="detail"> Detalle</label>
+                            </label>
+                        </div>
+                        <div class="col-5">
+                            <label class="col-5">
+                                <label id="value"> 0000</label>
+                            </label>
+                        </div>
+                    </div>
+
+                    <hr>
+                </div>
+
+                <h4 class="text-center">Datos de la persona que realiza el pago.</h4>
+                <br/>
+
+                <div id="form_paymentdata">
+
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label asp-for="pagos.NombreR"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="pagos.NombreR" class="form-control" placeholder="Ingresa el nombre del responsable del pago" id="nombreR" />
+                            <span asp-validation-for="pagos.NombreR" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label asp-for="pagos.ApellidoR"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="pagos.ApellidoR" class="form-control" placeholder="Ingresa el apellido del responsable del pago" id="apellidoR" />
+                            <span asp-validation-for="pagos.ApellidoR" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label asp-for="pagos.TipoPersona"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <select id="form-checkout__personType" name="personType" type="text" class="form-control">
+                                <option value="natural">Natural</option>
+                                <option value="juridica">Jurídica</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label for="TDocumento">Tipo Documento</label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <select id="form-checkout__identificationType" name="identificationType" type="text" class="form-control"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label asp-for="pagos.DocumentoR"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="pagos.DocumentoR" class="form-control" placeholder="Ingresa el documento" id="documentoR" />
+                            <span asp-validation-for="pagos.DocumentoR" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label asp-for="pagos.CorreoR"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input id="correoRInput" asp-for="pagos.CorreoR" class="form-control" placeholder="Ingresa el correo del responsable del pago" />
+                            <span id="correoRError" asp-validation-for="pagos.CorreoR" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label asp-for="pagos.CelularR"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="pagos.CelularR" class="form-control" placeholder="Ingresa el numero de contacto" id="celularR" />
+                            <span asp-validation-for="pagos.CelularR" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label asp-for="pagos.DireccionR"></label>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="pagos.DireccionR" class="form-control" placeholder="Ingresa la dirección de residencia" id="direccionR" />
+                            <span asp-validation-for="pagos.DireccionR" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <div class="col-6">
+                            <label class="col-5">
+                                <label for="Banco">Seleccionar Banco</label>
+                            </label>
+                        </div>
+                        <div class="col-6" id="banksList"></div>
+
+                    </div>
+                    <div><p id="lblErrorValidate" style="text-align:center;color:red;"></p></div>
+                    <div class="form-group row mt-4 m-lg-4">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control">Pagar con: <img src="~/img/pse.png" width="30" height="30" /></button>
+                        </div>
+                        &nbsp;
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Volver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+}
+catch (Exception ex)
+{
+    Log log = new Log();
+    await log.escribirLog("ERROR", ex.ToString(), "RegistroParticimante.cshtml");
+}
+
+@section Scripts{
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="~/js/mercadopago.js"></script>
+}

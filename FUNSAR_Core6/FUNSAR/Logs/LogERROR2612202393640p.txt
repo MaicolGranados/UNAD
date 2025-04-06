@@ -1,0 +1,5 @@
+26/12/2023 9:36:40 p. m.
+CLASE: VoluntariosController.Edit(model)
+MENSAJE: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FUNSAR.Areas.Admin.Controllers.VoluntariosController.Edit(VoluntarioVM artivm) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\VoluntariosController.cs:line 129
+

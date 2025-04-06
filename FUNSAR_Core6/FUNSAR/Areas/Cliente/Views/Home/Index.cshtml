@@ -1,0 +1,1016 @@
+﻿@using FUNSAR.Models.ViewModels
+@using FUNSAR.HerramientasComunes
+@model HomeVM
+@{
+    ViewData["Title"] = "Busqueda y Rescate";
+}
+@try
+{
+    <div class="row consulta offset-2 mt-2">
+        @*<div class="col-8">
+    <p class="text-center mt-2">Ingresa en el siguiente modulo para consultar tu proceso.</p>
+    </div>*@
+        <div class="col-1">
+
+            <!-- Button modal -->
+            @*<button type="button" class="btn btn-primary" data-toggle="modal" onclick="ModalConsultar()">
+        Consultar
+        </button>*@
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="MostrarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Consultar Proceso</h5>
+                        </div>
+
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                        {
+                            <div class="modal-body">
+
+                                <!---->
+                                <div class="form-group row">
+                                    <div class="col-4">
+                                        @Html.DropDownListFor(m => m.SelectTdocumento, new SelectList(Enum.GetValues(typeof(tDocumento))), "Tipo Documento", new {@class= "form-control"})
+
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" name="documento" class="form-control" placeholder="Numero Documento" />
+                                        <span asp-validation-for="certificado.Documento" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="submit" class="btn btn-outline-primary form-control">Consultar</button>
+
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+
+            @if (Model.resultado == "SinResultado")
+            {
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#SinResultado').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade" id="SinResultado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">SIN RESULTADOS</h5>
+                            </div>
+
+                            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                            {
+                                <div class="modal-body">
+
+                                    <!---->
+                                    <div class="form-group row">
+                                        <div class="col-4">
+                                            @Html.DropDownListFor(m => m.SelectTdocumento, new SelectList(Enum.GetValues(typeof(tDocumento))), "Tipo Documento", new {@class= "form-control"})
+
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" name="documento" class="form-control" placeholder="Numero Documento" />
+                                            <span asp-validation-for="certificado.Documento" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button type="submit" class="btn btn-outline-primary form-control">Consultar</button>
+
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "SinDoc")
+            {
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#SinResultado').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade" id="SinResultado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">DEBES INGRESAR EL DOCUMENTO </h5>
+                            </div>
+
+                            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                            {
+                                <div class="modal-body">
+
+                                    <!---->
+                                    <div class="form-group row">
+                                        <div class="col-4">
+                                            @Html.DropDownListFor(m => m.SelectTdocumento, new SelectList(Enum.GetValues(typeof(tDocumento))), "Tipo Documento", new {@class= "form-control"})
+
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" name="documento" class="form-control" placeholder="Numero Documento" />
+                                            <span asp-validation-for="certificado.Documento" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button type="submit" class="btn btn-outline-primary form-control">Consultar</button>
+
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "data")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Certificado</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <table id="tblCategorias" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Documento</th>
+                                            <th>Fecha Expedición</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>@Html.DisplayFor(m => m.certificado.Id)</td>
+                                            <td>@Html.DisplayFor(m => m.certificado.Nombre)</td>
+                                            <td>@Html.DisplayFor(m => m.certificado.Apellido)</td>
+                                            <td>@Html.DisplayFor(m => m.certificado.Documento)</td>
+                                            <td>@Html.DisplayFor(m => m.certificado.FechaExpedicion)</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="PDF" asp-route-id="@Model.certificado.Id" class="btn btn-primary">Generar</a>
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+
+
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "Inscrito")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Resultado de la Busqueda</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>Saludos, usted se ecuentra inscrito en el programa de servicio social estudiantil, recuerde seguir las indicaciones de su gestor de brigada.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "PlanFamiliar")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Resultado de la Busqueda - Participante en Proceso</h5>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>Recuerda que este paso es indispensable para aprobar el servicio social estudiantil, te invitamos a subir el Plan Familiar de Emergencia en formato PDF:</p>
+                                @using (Html.BeginForm("UploadPFE", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+
+                                    @Html.AntiForgeryToken()
+                                    ;
+                                    <div class="form-group">
+                                        @Html.LabelFor(d => d.filePFE)
+                                        @Html.TextBoxFor(d => d.filePFE, new {@class="form-control",type="file",accept=".pdf", id="tboxUpdate"})
+                                        @Html.ValidationMessageFor(d=>d.filePFE,"", new {@class="text-danger"})
+                                    </div>
+                                    <div class="form-group" style="text-align:right;">
+                                        <p style="color: red" id="lblerror"></p>
+                                        <input id="btnUpdatepfe" type="submit" class="btn btn-primary mt-3" disabled value="Cargar Archivo" />
+                                    </div>
+                                }
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "nRequisitos")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Resultado de la Busqueda</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>No cumples con los requisitos para la aprobación del proceso, en caso de dudas dirigete con tu gestor.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "sRequisitos")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Resultado de la Busqueda</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>Has culminado tu proceso, nos encontramos validando que cumplas con todos los requisitos, en proximos dias se informara para continuar con el pago.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "PendientePago")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Resultado de la Busqueda</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>Saludos, cumples con los requisitos necesarios para completar el servicio social estudiantil, favor realizar el pago del certificado desde el siguiente enlace:</p>
+                                <a class="btn btn-primary" asp-area="Cliente" asp-controller="Home" asp-action="Generarpago" asp-route-id="1">Pagar Certificado</a>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "PlanFalimiarAprobado")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Resultado de la Busqueda</h5>
+                            </div>
+
+                            <div class="modal-body">
+                                <h4>Plan Familiar de Emergencias</h4>
+                                <p>El plan familiar de emergencias fue aprobado por el gestor, se habilitara el pago en proximos dias.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "PlanFalimiarCorregir")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Plan Familiar de Emergencias</h5>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>El plan familiar de emergencias debe corregirse, valida los siguientes comentarios y sube de nuevo el documento:</p>
+                                <textarea class="form-control" readonly="readonly">@Model.DetallePfe</textarea>
+                                @using (Html.BeginForm("UpdatePFE", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+
+                                    @Html.AntiForgeryToken()
+                                    ;
+                                    <div class="form-group mt-2">
+                                        @Html.TextBoxFor(d => d.filePFE, new {@class="form-control",type="file",accept=".pdf", id="tboxUpdate"})
+                                        @Html.ValidationMessageFor(d=>d.filePFE,"", new {@class="text-danger"})
+                                    </div>
+                                    <div class="form-group" style="text-align:right;">
+                                        <p style="color: red" id="lblerror"></p>
+                                        <input id="btnUpdatepfe" type="submit" class="btn btn-primary mt-3" disabled value="Cargar Archivo" />
+                                    </div>
+                                }
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "PlanFalimiarEntregado")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#PlanFamiliarEntregado').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="PlanFamiliarEntregado" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Plan Familiar de Emergencias</h5>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>Plan Familiar de Emergencias entregado, una vez validado por el gestor podra visualizar el estado del mismo.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "PlanFalimiarError")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#PlanFamiliarEntregado').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="PlanFamiliarEntregado" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Plan Familiar de Emergencias</h5>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>Ocurrio un error al cargar el documento, favor validar que este en formato PDF e intente de nuevo.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "RegistroExitoso")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#RegistroExitoso').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="RegistroExitoso" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Confirmacion de Registro</h5>
+                            </div>
+
+                            <div class="modal-body">
+                                <h4>Participante Registrado</h4>
+                                <p>Se completo correctamente el registro del participante.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "Existente")
+            {
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#PartExistente').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="PartExistente" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Notificación Registro</h5>
+                            </div>
+
+                            <div class="modal-body">
+                                <h4>Participante Existente</h4>
+                                <p>El participante ingresado ya existe.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "Brigada")
+            {
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#Brigadasiniciar').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="Brigadasiniciar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Notificación Registro</h5>
+                            </div>
+
+                            <div class="modal-body">
+                                <h4>Brigada sin iniciar</h4>
+                                <p>La brigada a la cual intenta registrarse no se ha iniciado.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "Error")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Error en el proceso de registro</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>Se genero un error al registrarse, favor intente de nuevo.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "Incompleto")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Resultado de la busqueda.</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>Su proceso se encuentra en estado "Incompleto" debido al tiempo de inactividad, favor comunicarse al correo info@funsar.org.co para restablecer su proceso.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "ErrorPago")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Error en el proceso.</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>Se genero un error al generar el proceso de pago, en caso de persistir favor comunicarse al correo soporte@funsar.org.co</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            @if (Model.resultado == "DataPago")
+            {
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                @*<partial name="_VistaConsultarCertificado" />     *@
+                <script type="text/javascript">
+                    window.onload = function () {
+                        $('#ResultadoConsulta').modal('toggle');
+                    }
+
+                </script>
+                <div class="modal fade bd-example-modal-lg" id="ResultadoConsulta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <!---->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-center modal-title" id="exampleModalLabel">Brigada sin evento.</h5>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>No se encontro actividad asociada a la brigada, favor validar con el gestor.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            }
+            
+
+        </div>
+    </div>
+
+
+
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @{
+                int cont = 0;
+            }
+            @foreach (var item in Model.Slider)
+            {
+                var itemDinamico = cont++ == 0 ? "item active" : "item";
+                @if (item.Estado == true)
+                {
+                    <div class="carousel-item @itemDinamico">
+                        <img src="@Url.Content(item.UrlImagen)" class="d-block w-100" alt="FUNSAR">
+                    </div>
+                }
+
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!--Cierra Slider-->
+    <!--Actividades-->
+    
+<div class="row mt-1">
+    <div class="col-sm-12">
+        <h1 class="text-center text-primary">Proximas Actividades</h1>
+    </div>
+</div>
+
+@if (Model.ListaArticulos.Count() > 0)
+{
+    <hr />
+    <div class="row">
+        @foreach (var articulo in Model.ListaCategorias.OrderBy(o => o.Id))
+        {
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">@articulo.Nombre</h5>
+                            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    @{
+                                        int contA = 0;
+                                    }
+                                    @foreach (var item in Model.ListaArticulos)
+                                    {
+                                        var itemDinamico = contA++ == 0 ? "item active" : "item";
+                                        
+                                        <div class="carousel-item @itemDinamico">
+                                            <img src="@Url.Content(item.UrlImagen)" class="d-block w-100" alt="FUNSAR">
+                                        </div>
+                                        
+                                    }
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a asp-action="Details" class="btn btn-success" style="border-radius:2px" asp-route-id="@articulo.Id">Mas Información</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No hay actividades programadas.</p>
+}
+
+
+    <!--Informacion-->
+    <div class="container mt-4" id="Nosotros">
+        <h1 class="text-center text-primary mb-5">Nuestra Institución</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary">Visión</h2>
+                        <i class="fa-solid fa-chart-line iconVision mb-3"></i>
+                        <p class="card-text">
+                            La Fundación de Búsqueda y Rescate FUNSAR tiene como visión para el año 2022, ser la entidad líder a nivel nacional en formación de rescatistas, brigadas de emergencia en el sector empresarial, educativo y comunitario, por medio de su centro de entrenamiento con altos estándares en las diferentes áreas del rescate y la atención prehospitalaria, proyectando su grupo especializado de rescate a nivel nacional en la atención de emergencias y desastres.
+                        </p>
+                    </div>
+                    <img src="img/info/Vision.jpeg" alt="imagen cuerda" class="card-img-bottom rounded-bottom">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary">Misión</h2>
+                        <i class="fa-solid fa-pen-to-square iconMision mb-3"></i>
+                        <p class="card-text">
+                            La Fundación de Búsqueda y Rescate FUNSAR como organización de voluntariado en primera respuesta tiene como misión la gestión integral del riesgo y cambio climático para la sociedad por medio de la identificación, reducción, atención, rehabilitación a emergencias y desastres, por medio de la participación activa de sus voluntarios generando una cultura de prevención y resiliencia.
+                        </p>
+                    </div>
+                    <img src="img/info/Mision.jpeg" alt="imagen cuerda" class="card-img-bottom rounded-bottom">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary">Valores Corporativos</h2>
+                        <i class="fa-solid fa-id-card-clip iconValores mb-3"></i>
+                        <p class="card-text">
+                            La Fundación de Búsqueda y Rescate FUNSAR, vela por el cumplimiento y la promulgación de los valores institucionales reflejados en el desarrollo de nuestro objeto social, siendo estos; la lealtad, espíritu de servicio, solidaridad, altruismo y responsabilidad, ya que son reflejo de todos los integrantes y procesos desarrollados por la institución.
+                        </p>
+                    </div>
+                    <img src="img/info/Valores.jpeg" alt="imagen cuerda" class="card-img-bottom rounded-bottom">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" id="Servicios">
+        <h1 class="text-center text-primary mb-5">Nuestro Portafolio</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary">Cursos</h2>
+                        <i class="fa-solid fa-graduation-cap iconCouse mb-3"></i>
+                        <p class="card-text">
+                            La Fundación de Búsqueda y Rescate FUNSAR, brinda a la comunidad, al sector salud, al sector empresarial e industrial la oportunidad de formarse en seminarios, talleres y cursos, que fortalezcan las habilidades laborales y contribuyan a la identificación y reducción del riesgo, como el abordaje a posibles emergencias que se lleguen a presentar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary">Brigadas Juveniles</h2>
+                        <i class="fa-solid fa-staff-snake iconStar mb-3"></i>
+                        <p class="card-text">
+                            La Fundación de Búsqueda y Rescate – FUNSAR, en cumplimiento de su objeto social realiza formación en voluntariado juvenil por medio de la conformación de brigadas locales y municipales en gestión del riesgo y cambio climático en articulación con los colegios del sector publico y privado en el territorio nacional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary">Medio Ambiente</h2>
+                        <i class="fa-solid fa-earth-americas iconEarth mb-3"></i>
+                        <p class="card-text">
+                            Formulación de Plan de Gestión Integral de Residuos Sólidos (PGIRS),
+                            Plan de Manejo Ambiental (PMA) y Sistemas de Gestión Ambiental (SGA) mediante NTC ISO 14001.
+                            Implementación de PGIRS, PMA, SGA.
+                            Evaluación de PGIRS, PMA, SGA.
+                            Control y seguimiento de PGIRS, PMA, SGA.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" id="Servicios">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary">Seguridad y salud en el trabajo</h2>
+                        <i class="fa-solid fa-hospital-user iconSST mb-3"></i>
+                        <p class="card-text">
+                            Los ambientes seguros en el trabajo son de vital importancia, la seguridad y salud de los colabores esta como prioridad en todos los procesos productivos, es por esto que la Fundación FUNSAR, pone a disposición del sector productivo una estrategia eficaz para abordar la seguridad y la salud en el trabajo, en concordancia con el decreto 1072 de 2015 y la resolución 0312 de 2019.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <img src="img/info/Img_cuerda.jpg" alt="imagen cuerda" class="card-img-top rounded-3">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary">Cubrimiento masivo de eventos en salud</h2>
+                        <i class="fa-solid fa-hand-holding-medical iconHealt mb-3"></i>
+                        <p class="card-text">
+                            Reducir el riesgo en eventos donde la aglomeración de personas puede poner en peligro la integridad de los asistentes. Nuestra intervención se enfoca en la prevención y atención eficaz de incidentes, urgencias o emergencias para aliados empresariales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5" id="Contacto">
+        <h1 class="text-center text-primary mb-4">Contacto</h1>
+        <h2 class="text-center text-secondary mb-4">Nuestra Ubicación</h2>
+        <div class="row mb-5">
+            <div class="col-12">
+                <iframe class="w-100 rounded-3 shadow-sm" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1063.5356937293075!2d-74.18088814995363!3d4.610921996447384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9fab7338ca63%3A0x7dabeead917dcb7c!2sFundacion%20FUNSAR!5e0!3m2!1ses!2sco!4v1667700049550!5m2!1ses!2sco" style="border:0; height: 300px;" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6 mb-3">
+                <p class="h5"><i class="fa-solid fa-location-dot"></i> Cra. 80d #58j Sur-44, Bogotá</p>
+                <p class="h5"><i class="fa-solid fa-phone"></i> 3132421945 - 3118555112</p>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <a href="https://api.whatsapp.com/send/?phone=573132421945..." class="me-2"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/FundacionFUNSAR/" class="me-2"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/fundacion_funsar/" class="me-2"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UClftCmV_TPyvooAAY4LxJHg" class="me-2"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://twitter.com/FundacionFUNSAR" class="me-2"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function ModalConsultar() {
+            $('#MostrarModal').modal('show');
+        };
+        function ModalRegistro() {
+            $('#MostrarModalRegistro').modal('show');
+        };
+
+
+    </script>
+    
+}
+catch (Exception ex)
+{
+    Log log = new Log();
+    await log.escribirLog("ERROR", ex.ToString(), "Index.cshtml");
+}
+@section Scripts{
+    <script src="~/js/Index.js"></script>
+}
+
+

@@ -1,0 +1,33 @@
+﻿@using FUNSAR.HerramientasComunes
+@{
+    ViewData["Title"] = "Confirmación del pago";
+}
+@try
+{
+    <br />
+    <br />
+    <h3 class="text-center">Oops.. Se genero un problema</h3>
+    <form method="post" asp-action="ProcesarPago" enctype="multipart/form-data">
+
+        <div class="row px-2 offset-1 border">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <p>@ViewBag.msg</p>
+            <div class="col-10 offset-1 mt-4">
+                <p class="justify-content-center">
+                    Se genero un problema al generar la solicitud de pago, favor validar nuevamente.
+                </p>
+                <p>
+                    En caso de persistir comunicarse al correo info@funsar.org.co, informando el numero de documento del voluntario para su validación.
+                </p>
+            </div>
+        </div>
+    </form>
+}
+catch (Exception ex)
+{
+    Log log = new Log();
+    await log.escribirLog("ERROR", ex.ToString(), "ProcesarPago.cshtml");
+}
+
+@section Scripts{
+}

@@ -1,0 +1,114 @@
+﻿@model FUNSAR.Models.ViewModels.ColegioVM
+@using FUNSAR.Utilidades
+
+@{
+    ViewData["Title"] = "Editar Colegio";
+}
+<br />
+<br />
+<h3 class="text-center">Editar Colegio</h3>
+<form method="post" asp-action="Edit">
+    <input type="hidden" asp-for="Colegio.Id" />
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="Colegio.Nombre"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Colegio.Nombre" class="form-control" placeholder="Ingresa el nombre del colegio" />
+                    <span asp-validation-for="Colegio.Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            @*@if (User.IsInRole(CNT.Administrativo) || User.IsInRole(CNT.SuperAdmin))
+            {
+                
+            }*@
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="Brigada">Brigada</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.Colegio.BrigadaId, Model.ListaBrigadas, "-Seleccione una brigada-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+            
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="DatoColegio.NombreEncargado"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="DatoColegio.NombreEncargado" class="form-control" placeholder="Ingresa el nombre del encargado" />
+                    <span asp-validation-for="DatoColegio.NombreEncargado" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="DatoColegio.Correo"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="DatoColegio.Correo" class="form-control" placeholder="Ingresa el correo del encargado" />
+                    <span asp-validation-for="DatoColegio.Correo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="DatoColegio.NumeroContacto"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="DatoColegio.NumeroContacto" class="form-control" placeholder="Ingresa el numero del encargado" />
+                    <span asp-validation-for="DatoColegio.NumeroContacto" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label asp-for="DatoColegio.Cargo"></label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="DatoColegio.Cargo" class="form-control" placeholder="Ingresa el cargo del encargado" />
+                    <span asp-validation-for="DatoColegio.Cargo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <label class="col-4">
+                        <label for="Jornada">Jornada</label>
+                    </label>
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.DatoColegio.JornadaId, Model.ListaJornada, "-Seleccione la jornada-",
+                    new {@class = "form-control"})
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 m-lg-4">
+                <div class="col">
+                    <button type="submit" class="btn btn-outline-primary form-control" asp-route-id="@Model.Colegio.Id">Actualizar</button>
+                </div>
+                <div class="col">
+                    <a asp-action="Index" class="btn btn-success form-control">Volver a Lista</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>

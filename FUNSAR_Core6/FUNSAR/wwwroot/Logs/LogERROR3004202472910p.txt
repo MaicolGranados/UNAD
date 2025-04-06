@@ -1,0 +1,5 @@
+30/04/2024 7:29:10 p. m.
+CLASE: HomeController.Procesarpago()
+MENSAJE: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FUNSAR.Areas.Cliente.Controllers.HomeController.ValidarPago(Int64 payment_id) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 776
+

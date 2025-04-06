@@ -1,0 +1,5 @@
+21/12/2024 1:12:38 a. m.
+CLASE: HomeController.GenerarSesion()
+MENSAJE: System.NullReferenceException: Object reference not set to an instance of an object.
+   at FUNSAR.Areas.Cliente.Controllers.HomeController.GenerarSesion(ArticuloVM articulo) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 693
+

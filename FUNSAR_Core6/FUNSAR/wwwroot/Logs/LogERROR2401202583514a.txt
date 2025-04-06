@@ -1,0 +1,6 @@
+24/01/2025 8:35:14 a. m.
+CLASE: ArticulosController.Create(Model)
+MENSAJE: System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at FUNSAR.Areas.Admin.Controllers.ArticulosController.Create(ArticuloVM artivm) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\ArticulosController.cs:line 77
+
