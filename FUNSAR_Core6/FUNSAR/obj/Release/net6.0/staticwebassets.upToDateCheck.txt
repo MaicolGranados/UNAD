@@ -128,6 +128,7 @@ wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\Logs\LogERROR12022025120351.txt
 wwwroot\Logs\LogERROR15022025115609.txt
+wwwroot\Logs\LogERROR1504202595525 .txt
 wwwroot\Logs\LogERROR1610202470816p.txt
 wwwroot\Logs\LogERROR1610202471343p.txt
 wwwroot\Logs\LogERROR1610202473547p.txt
@@ -154,6 +155,7 @@ wwwroot\Logs\LogERROR22042024103504.txt
 wwwroot\Logs\LogERROR22042024103519.txt
 wwwroot\Logs\LogERROR2302202434048p.txt
 wwwroot\Logs\LogERROR2302202434127p.txt
+wwwroot\Logs\LogERROR2305202575926 .txt
 wwwroot\Logs\LogERROR2401202583514a.txt
 wwwroot\Logs\LogERROR2412202411100p.txt
 wwwroot\Logs\LogERROR2412202412652p.txt

@@ -103,69 +103,121 @@ namespace FUNSAR.Areas.Admin.Controllers
         {
             try
             {
-                if (artivm.PFE.VoluntarioId == null)
+                var param = _contenedorTrabajo.Params.GetFirstOrDefault(p => p.id == 9);
+                if(param.Valor.Equals("SI"))
                 {
-                    if ((artivm.PFE = _contenedorTrabajo.pFE.GetFirstOrDefault(filter: p => p.VoluntarioId == artivm.Voluntario.Id)) != null)
+                    if (artivm.PFE.VoluntarioId == null)
                     {
-                        artivm.PFE = _contenedorTrabajo.pFE.GetFirstOrDefault(filter: p => p.VoluntarioId == artivm.Voluntario.Id);
-                        artivm.ListaEstadoPFE = _contenedorTrabajo.estadoPFE.GetListaEstadoPFE();
+                        if ((artivm.PFE = _contenedorTrabajo.pFE.GetFirstOrDefault(filter: p => p.VoluntarioId == artivm.Voluntario.Id)) != null)
+                        {
+                            artivm.PFE = _contenedorTrabajo.pFE.GetFirstOrDefault(filter: p => p.VoluntarioId == artivm.Voluntario.Id);
+                            artivm.ListaEstadoPFE = _contenedorTrabajo.estadoPFE.GetListaEstadoPFE();
+                        }
+                        else
+                        {
+                            artivm.PFE = null;
+                        }
+                        _contenedorTrabajo.Voluntario.Update(artivm.Voluntario);
+                        _contenedorTrabajo.save();
+                        return RedirectToAction(nameof(Index));
                     }
-                    else
-                    {
-                        artivm.PFE = null;
-                    }
-                    _contenedorTrabajo.Voluntario.Update(artivm.Voluntario);
-                    _contenedorTrabajo.save();
-                    return RedirectToAction(nameof(Index));
-                }
-                if (ModelState.IsValid && artivm.PFE.VoluntarioId != null)
-                {
-                    PFE pfe = new PFE();
-                    _contenedorTrabajo.Voluntario.Update(artivm.Voluntario);
-                    _contenedorTrabajo.save();
 
-                    pfe.VoluntarioId = artivm.Voluntario.Id;
-                    artivm.PFE.VoluntarioId = pfe.VoluntarioId;
-                    _contenedorTrabajo.pFE.Update(artivm.PFE);
+                    if (ModelState.IsValid && artivm.PFE.VoluntarioId != null)
+                    {
+                        PFE pfe = new PFE();
+                        _contenedorTrabajo.Voluntario.Update(artivm.Voluntario);
+                        _contenedorTrabajo.save();
+
+                        pfe.VoluntarioId = artivm.Voluntario.Id;
+                        artivm.PFE.VoluntarioId = pfe.VoluntarioId;
+                        _contenedorTrabajo.pFE.Update(artivm.PFE);
+                        _contenedorTrabajo.save();
+
+                        Voluntario voluntario = new Voluntario();
+                        voluntario = _contenedorTrabajo.Voluntario.Get(artivm.Voluntario.Id);
+
+
+                        if (artivm.PFE.EstadoPFEId == 2)
+                        {
+
+                            //Envio de correo con los detalles del PFE:
+                            string cuerpoCorreo = "<p>Cordial saludo.</p<br><br>" +
+                                "<p>De acuerdo al plan familiar de emergencias entregado, el gestor a realizado las siguientes observaciones:</p>" +
+                                "<p>" + artivm.PFE.Detalle + "</p>" +
+                                "<p>Favor realizar las correcciones correspondientes y subir de nuevo el documento a la pagina www.funsar.org.co desde el apartado \"Consultar Proceso\"</p><br>" +
+                                "<p><b>Cordialmente.</b></p>" +
+                                "<p>Fundacion de busqueda y rescate FUNSAR</p>" +
+                                "<p>Puede hacer seguimiento de su proceso en www.funsar.org.co</p>";
+
+                            Correo correo = new Correo();
+                            await correo.EnvioGmail("Servicio Social FUNSAR", artivm.Voluntario.correo, "Plan Familiar de Emergencias", cuerpoCorreo);
+                        }
+
+                        if (artivm.PFE.EstadoPFEId == 1)
+                        {
+                            artivm.Voluntario.EstadoId = 4;
+                            _contenedorTrabajo.Voluntario.Update(artivm.Voluntario);
+                            _contenedorTrabajo.save();
+                            //Envio de correo con los detalles del PFE:
+                            string cuerpoCorreo = "<p>Cordial saludo.</p<br><br>" +
+                                "<p>De acuerdo al plan familiar de emergencias entregado, el gestor a realizado las siguientes observaciones:</p>" +
+                                "<p>" + artivm.PFE.Detalle + "</p>" +
+                                "<p>En caso de requerir correcciones volver a subir el documento a la pagina www.funsar.org.co desde el apartado \"Consultar Proceso\"</p><br>" +
+                                "<p><b>Cordialmente.</b></p>" +
+                                "<p>Fundacion de busqueda y rescate FUNSAR</p>" +
+                                "<p>Puede hacer seguimiento de su proceso en www.funsar.org.co</p>";
+
+                            Correo correo = new Correo();
+                            await correo.EnvioGmail("Servicio Social FUNSAR", artivm.Voluntario.correo, "Plan Familiar de Emergencias", cuerpoCorreo);
+                        }
+
+                        if (voluntario.EstadoId == 6)
+                        {
+                            Certificado certvm = new Certificado();
+                            certvm.FechaExpedicion = DateTime.Now.ToString("yyyy/MM/dd");
+                            certvm.EstadoId = 5;
+                            certvm.codCertificado = Guid.NewGuid().ToString();
+                            certvm.Nombre = artivm.Voluntario.Nombre;
+                            certvm.Apellido = artivm.Voluntario.Apellido;
+                            certvm.DocumentoId = artivm.Voluntario.DocumentoId;
+                            var brigada = _contenedorTrabajo.Colegio.GetFirstOrDefault(filter: b => b.Id == artivm.Voluntario.ColegioId);
+                            certvm.Documento = artivm.Voluntario.Documento;
+                            certvm.BrigadaId = brigada.BrigadaId;
+                            int semestre = 0;
+                            if (DateTime.Now.Month >= 1 && DateTime.Now.Month <= 6)
+                            {
+                                semestre = 1;
+                            }
+                            else
+                            {
+                                semestre = 2;
+                            }
+                            certvm.SemestreId = semestre;
+                            certvm.AnoProceso = DateTime.Now.ToString("yyyy");
+                            certvm.ProcesoId = artivm.Voluntario.ProcesoId;
+                            _contenedorTrabajo.Certificado.Add(certvm);
+                            _contenedorTrabajo.save();
+                        }
+
+
+                        return RedirectToAction(nameof(Index));
+                    }
+                    
+
+                    artivm.Voluntario = new FUNSAR.Models.Voluntario();
+                    artivm.ListaColegio = _contenedorTrabajo.Colegio.GetListaColegios();
+                    artivm.ListaTipoDocumento = _contenedorTrabajo.TDocumento.GetListaDocumento();
+                    artivm.ListaEstado = _contenedorTrabajo.estadoPersona.GetListaEstado();
+
+                    return RedirectToAction(nameof(Edit));
+                }
+                else
+                {
+                    _contenedorTrabajo.Voluntario.Update(artivm.Voluntario);
                     _contenedorTrabajo.save();
 
                     Voluntario voluntario = new Voluntario();
                     voluntario = _contenedorTrabajo.Voluntario.Get(artivm.Voluntario.Id);
-
-
-                    if (artivm.PFE.EstadoPFEId == 2)
-                    {
-
-                        //Envio de correo con los detalles del PFE:
-                        string cuerpoCorreo = "<p>Cordial saludo.</p<br><br>" +
-                            "<p>De acuerdo al plan familiar de emergencias entregado, el gestor a realizado las siguientes observaciones:</p>" +
-                            "<p>" + artivm.PFE.Detalle + "</p>" +
-                            "<p>Favor realizar las correcciones correspondientes y subir de nuevo el documento a la pagina www.funsar.org.co desde el apartado \"Consultar Proceso\"</p><br>" +
-                            "<p><b>Cordialmente.</b></p>" +
-                            "<p>Fundacion de busqueda y rescate FUNSAR</p>" +
-                            "<p>Puede hacer seguimiento de su proceso en www.funsar.org.co</p>";
-
-                        Correo correo = new Correo();
-                        await correo.EnvioGmail("Servicio Social FUNSAR", artivm.Voluntario.correo, "Plan Familiar de Emergencias", cuerpoCorreo);
-                    }
-
-                    if (artivm.PFE.EstadoPFEId == 1)
-                    {
-                        artivm.Voluntario.EstadoId = 4;
-                        _contenedorTrabajo.Voluntario.Update(artivm.Voluntario);
-                        _contenedorTrabajo.save();
-                        //Envio de correo con los detalles del PFE:
-                        string cuerpoCorreo = "<p>Cordial saludo.</p<br><br>" +
-                            "<p>De acuerdo al plan familiar de emergencias entregado, el gestor a realizado las siguientes observaciones:</p>" +
-                            "<p>" + artivm.PFE.Detalle + "</p>" +
-                            "<p>En caso de requerir correcciones volver a subir el documento a la pagina www.funsar.org.co desde el apartado \"Consultar Proceso\"</p><br>" +
-                            "<p><b>Cordialmente.</b></p>" +
-                            "<p>Fundacion de busqueda y rescate FUNSAR</p>" +
-                            "<p>Puede hacer seguimiento de su proceso en www.funsar.org.co</p>";
-
-                        Correo correo = new Correo();
-                        await correo.EnvioGmail("Servicio Social FUNSAR", artivm.Voluntario.correo, "Plan Familiar de Emergencias", cuerpoCorreo);
-                    }
 
                     if (voluntario.EstadoId == 6)
                     {
@@ -198,12 +250,6 @@ namespace FUNSAR.Areas.Admin.Controllers
                     return RedirectToAction(nameof(Index));
                 }
 
-                artivm.Voluntario = new FUNSAR.Models.Voluntario();
-                artivm.ListaColegio = _contenedorTrabajo.Colegio.GetListaColegios();
-                artivm.ListaTipoDocumento = _contenedorTrabajo.TDocumento.GetListaDocumento();
-                artivm.ListaEstado = _contenedorTrabajo.estadoPersona.GetListaEstado();
-
-                return RedirectToAction(nameof(Edit));
             }
             catch (Exception ex)
             {

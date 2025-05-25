@@ -77,6 +77,10 @@ $('#sendDataBtn').click(function () {
     dateIn = dateIn.substring(21,31);
 
     if (dateIn != '01/01/0001') {
+
+        var parts = dateIn.split('/');
+        var formattedDate = parts[2] + '-' + parts[1] + '-' + parts[0]; // yyyy-MM-dd
+
         $('#tblAsistenciaDia tbody tr').each(function () {
             var row = $(this);
             var itemId = row.find('td:eq(0)').text();
@@ -89,7 +93,7 @@ $('#sendDataBtn').click(function () {
         });
 
         $.ajax({
-            url: '/admin/Asistencias/SaveTableData?dateIn='+dateIn,
+            url: '/admin/Asistencias/SaveTableData?dateIn=' + formattedDate,
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(

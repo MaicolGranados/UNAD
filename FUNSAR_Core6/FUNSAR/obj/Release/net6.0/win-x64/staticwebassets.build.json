@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Us4HvmJUUCVdlLAYRNsJtj2dbC+2jR1g7J0Qip83Sds=",
+  "Hash": "Od7MOFsS4XJFOw0SBV9jmrv6Yy3g6g0IuzsgmzdU92g=",
   "Source": "FUNSAR",
   "BasePath": "_content/FUNSAR",
   "Mode": "Default",
@@ -955,8 +955,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "czf1e8h34o",
-      "Integrity": "KMVbxy6j96kh0jIJxgE8G5sS+aiPB7VPTzEkaH0yA+g=",
+      "Fingerprint": "u7nldiv69x",
+      "Integrity": "NnJuJDgyty+/NQULoq94zUvE0igcBLOjjvCr+RCIxKg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\asistenciaDaily.js"
@@ -1228,8 +1228,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gl1vd3zuhb",
-      "Integrity": "1OLaZxgkuYJS7pqqPraJHEMuxOkCBpzAp7pCRVydqk4=",
+      "Fingerprint": "ax7irpn3dl",
+      "Integrity": "YtiuJIJudl7RY5r+WZyoRRjst0o+QbKNeQ/oY34jmJc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Index.js"
@@ -1249,8 +1249,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "79te6d1fsh",
-      "Integrity": "ZYp8LXTtkz/l4z+qDSnjD5nuLIl66m5vwrerDD9Cb1Y=",
+      "Fingerprint": "vraj1lr2oy",
+      "Integrity": "SwL6PSqNwcBfqMeKUR2q0jH8GYAhmQgg0JwR6xwCkuM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\IndexLogin.js"
@@ -1291,8 +1291,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "acrxvx2du5",
-      "Integrity": "qgsrpFzvkI4B3Whqsp4Y2TixawL0gVhykB+NBWug4XU=",
+      "Fingerprint": "0r29huoa24",
+      "Integrity": "1KCstNWxwfOMRcGIZuri+tnLL3pMDbW/M4kaEOlmh3s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\mercadopago.js"
@@ -2789,6 +2789,27 @@
       "OriginalItemSpec": "wwwroot\\Logs\\LogERROR15022025115609.txt"
     },
     {
+      "Identity": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR1504202595525\u202F.txt",
+      "SourceId": "FUNSAR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\",
+      "BasePath": "_content/FUNSAR",
+      "RelativePath": "Logs/LogERROR1504202595525\u202F#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5pio6zbp7q",
+      "Integrity": "qZZojETJUepea7m+sV02U5if4O9/Hr0eg73ivXFKzVk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Logs\\LogERROR1504202595525\u202F.txt"
+    },
+    {
       "Identity": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR1610202470816p.txt",
       "SourceId": "FUNSAR",
       "SourceType": "Discovered",
@@ -3333,6 +3354,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Logs\\LogERROR2302202434127p.txt"
+    },
+    {
+      "Identity": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR2305202575926\u202F.txt",
+      "SourceId": "FUNSAR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\",
+      "BasePath": "_content/FUNSAR",
+      "RelativePath": "Logs/LogERROR2305202575926\u202F#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zzf68f4pog",
+      "Integrity": "f7rJgFv0C98ttMSWI2HHGQ91EdO09XL0OUWxiFjUJ30=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Logs\\LogERROR2305202575926\u202F.txt"
     },
     {
       "Identity": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR2401202583514a.txt",
@@ -12567,51 +12609,6 @@
       ]
     },
     {
-      "Route": "js/asistenciaDaily.czf1e8h34o.js",
-      "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\asistenciaDaily.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4374"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KMVbxy6j96kh0jIJxgE8G5sS+aiPB7VPTzEkaH0yA+g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 06 Feb 2025 05:10:21 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "czf1e8h34o"
-        },
-        {
-          "Name": "label",
-          "Value": "js/asistenciaDaily.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-KMVbxy6j96kh0jIJxgE8G5sS+aiPB7VPTzEkaH0yA+g="
-        }
-      ]
-    },
-    {
       "Route": "js/asistenciaDaily.js",
       "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\asistenciaDaily.js",
       "Selectors": [],
@@ -12622,7 +12619,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4374"
+          "Value": "4514"
         },
         {
           "Name": "Content-Type",
@@ -12630,11 +12627,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KMVbxy6j96kh0jIJxgE8G5sS+aiPB7VPTzEkaH0yA+g=\""
+          "Value": "\"NnJuJDgyty+/NQULoq94zUvE0igcBLOjjvCr+RCIxKg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 06 Feb 2025 05:10:21 GMT"
+          "Value": "Sat, 17 May 2025 20:00:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12644,7 +12641,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KMVbxy6j96kh0jIJxgE8G5sS+aiPB7VPTzEkaH0yA+g="
+          "Value": "sha256-NnJuJDgyty+/NQULoq94zUvE0igcBLOjjvCr+RCIxKg="
+        }
+      ]
+    },
+    {
+      "Route": "js/asistenciaDaily.u7nldiv69x.js",
+      "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\asistenciaDaily.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4514"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NnJuJDgyty+/NQULoq94zUvE0igcBLOjjvCr+RCIxKg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 17 May 2025 20:00:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u7nldiv69x"
+        },
+        {
+          "Name": "label",
+          "Value": "js/asistenciaDaily.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NnJuJDgyty+/NQULoq94zUvE0igcBLOjjvCr+RCIxKg="
         }
       ]
     },
@@ -13633,7 +13675,7 @@
       ]
     },
     {
-      "Route": "js/Index.gl1vd3zuhb.js",
+      "Route": "js/Index.ax7irpn3dl.js",
       "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\Index.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -13643,7 +13685,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "743"
+          "Value": "823"
         },
         {
           "Name": "Content-Type",
@@ -13651,11 +13693,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1OLaZxgkuYJS7pqqPraJHEMuxOkCBpzAp7pCRVydqk4=\""
+          "Value": "\"YtiuJIJudl7RY5r+WZyoRRjst0o+QbKNeQ/oY34jmJc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 17 Oct 2024 00:04:13 GMT"
+          "Value": "Sat, 24 May 2025 00:38:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13665,7 +13707,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gl1vd3zuhb"
+          "Value": "ax7irpn3dl"
         },
         {
           "Name": "label",
@@ -13673,7 +13715,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-1OLaZxgkuYJS7pqqPraJHEMuxOkCBpzAp7pCRVydqk4="
+          "Value": "sha256-YtiuJIJudl7RY5r+WZyoRRjst0o+QbKNeQ/oY34jmJc="
         }
       ]
     },
@@ -13688,7 +13730,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "743"
+          "Value": "823"
         },
         {
           "Name": "Content-Type",
@@ -13696,11 +13738,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1OLaZxgkuYJS7pqqPraJHEMuxOkCBpzAp7pCRVydqk4=\""
+          "Value": "\"YtiuJIJudl7RY5r+WZyoRRjst0o+QbKNeQ/oY34jmJc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 17 Oct 2024 00:04:13 GMT"
+          "Value": "Sat, 24 May 2025 00:38:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13710,52 +13752,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1OLaZxgkuYJS7pqqPraJHEMuxOkCBpzAp7pCRVydqk4="
-        }
-      ]
-    },
-    {
-      "Route": "js/IndexLogin.79te6d1fsh.js",
-      "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\IndexLogin.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6127"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZYp8LXTtkz/l4z+qDSnjD5nuLIl66m5vwrerDD9Cb1Y=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 04:34:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "79te6d1fsh"
-        },
-        {
-          "Name": "label",
-          "Value": "js/IndexLogin.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZYp8LXTtkz/l4z+qDSnjD5nuLIl66m5vwrerDD9Cb1Y="
+          "Value": "sha256-YtiuJIJudl7RY5r+WZyoRRjst0o+QbKNeQ/oY34jmJc="
         }
       ]
     },
@@ -13770,7 +13767,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6127"
+          "Value": "6545"
         },
         {
           "Name": "Content-Type",
@@ -13778,11 +13775,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZYp8LXTtkz/l4z+qDSnjD5nuLIl66m5vwrerDD9Cb1Y=\""
+          "Value": "\"SwL6PSqNwcBfqMeKUR2q0jH8GYAhmQgg0JwR6xwCkuM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Feb 2025 04:34:03 GMT"
+          "Value": "Sat, 24 May 2025 00:41:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13792,7 +13789,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZYp8LXTtkz/l4z+qDSnjD5nuLIl66m5vwrerDD9Cb1Y="
+          "Value": "sha256-SwL6PSqNwcBfqMeKUR2q0jH8GYAhmQgg0JwR6xwCkuM="
+        }
+      ]
+    },
+    {
+      "Route": "js/IndexLogin.vraj1lr2oy.js",
+      "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\IndexLogin.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6545"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SwL6PSqNwcBfqMeKUR2q0jH8GYAhmQgg0JwR6xwCkuM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 24 May 2025 00:41:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vraj1lr2oy"
+        },
+        {
+          "Name": "label",
+          "Value": "js/IndexLogin.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SwL6PSqNwcBfqMeKUR2q0jH8GYAhmQgg0JwR6xwCkuM="
         }
       ]
     },
@@ -13879,7 +13921,7 @@
       ]
     },
     {
-      "Route": "js/mercadopago.acrxvx2du5.js",
+      "Route": "js/mercadopago.0r29huoa24.js",
       "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\mercadopago.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -13889,7 +13931,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10186"
+          "Value": "10227"
         },
         {
           "Name": "Content-Type",
@@ -13897,11 +13939,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qgsrpFzvkI4B3Whqsp4Y2TixawL0gVhykB+NBWug4XU=\""
+          "Value": "\"1KCstNWxwfOMRcGIZuri+tnLL3pMDbW/M4kaEOlmh3s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 20:02:08 GMT"
+          "Value": "Sat, 24 May 2025 01:36:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13911,7 +13953,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "acrxvx2du5"
+          "Value": "0r29huoa24"
         },
         {
           "Name": "label",
@@ -13919,7 +13961,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qgsrpFzvkI4B3Whqsp4Y2TixawL0gVhykB+NBWug4XU="
+          "Value": "sha256-1KCstNWxwfOMRcGIZuri+tnLL3pMDbW/M4kaEOlmh3s="
         }
       ]
     },
@@ -13934,7 +13976,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10186"
+          "Value": "10227"
         },
         {
           "Name": "Content-Type",
@@ -13942,11 +13984,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qgsrpFzvkI4B3Whqsp4Y2TixawL0gVhykB+NBWug4XU=\""
+          "Value": "\"1KCstNWxwfOMRcGIZuri+tnLL3pMDbW/M4kaEOlmh3s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 06 Apr 2025 20:02:08 GMT"
+          "Value": "Sat, 24 May 2025 01:36:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13956,7 +13998,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qgsrpFzvkI4B3Whqsp4Y2TixawL0gVhykB+NBWug4XU="
+          "Value": "sha256-1KCstNWxwfOMRcGIZuri+tnLL3pMDbW/M4kaEOlmh3s="
         }
       ]
     },
@@ -19783,6 +19825,88 @@
       ]
     },
     {
+      "Route": "Logs/LogERROR1504202595525\u202F.5pio6zbp7q.txt",
+      "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR1504202595525\u202F.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "650"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qZZojETJUepea7m+sV02U5if4O9/Hr0eg73ivXFKzVk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 14:55:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5pio6zbp7q"
+        },
+        {
+          "Name": "label",
+          "Value": "Logs/LogERROR1504202595525\u202F.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qZZojETJUepea7m+sV02U5if4O9/Hr0eg73ivXFKzVk="
+        }
+      ]
+    },
+    {
+      "Route": "Logs/LogERROR1504202595525\u202F.txt",
+      "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR1504202595525\u202F.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "650"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qZZojETJUepea7m+sV02U5if4O9/Hr0eg73ivXFKzVk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 14:55:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qZZojETJUepea7m+sV02U5if4O9/Hr0eg73ivXFKzVk="
+        }
+      ]
+    },
+    {
       "Route": "Logs/LogERROR1610202470816p.ar0eom8esd.txt",
       "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR1610202470816p.txt",
       "Selectors": [],
@@ -21911,6 +22035,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-h3iz1TQnFzBOjUjm9p1vrRXAqN/UqYsbIj+yyLqXmxw="
+        }
+      ]
+    },
+    {
+      "Route": "Logs/LogERROR2305202575926\u202F.txt",
+      "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR2305202575926\u202F.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "458"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"f7rJgFv0C98ttMSWI2HHGQ91EdO09XL0OUWxiFjUJ30=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 24 May 2025 00:59:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-f7rJgFv0C98ttMSWI2HHGQ91EdO09XL0OUWxiFjUJ30="
+        }
+      ]
+    },
+    {
+      "Route": "Logs/LogERROR2305202575926\u202F.zzf68f4pog.txt",
+      "AssetFile": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\Logs\\LogERROR2305202575926\u202F.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "458"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"f7rJgFv0C98ttMSWI2HHGQ91EdO09XL0OUWxiFjUJ30=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 24 May 2025 00:59:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zzf68f4pog"
+        },
+        {
+          "Name": "label",
+          "Value": "Logs/LogERROR2305202575926\u202F.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-f7rJgFv0C98ttMSWI2HHGQ91EdO09XL0OUWxiFjUJ30="
         }
       ]
     },

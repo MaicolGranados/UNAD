@@ -42,10 +42,14 @@ namespace FUNSAR.Areas.API
                 if (detalle.Id == 1)
                 {
                     var voluntario = _contenedorTrabajo.Voluntario.GetFirstOrDefault(filter: v => v.Id == Convert.ToInt32(servicio.documentoP));
+                    if (voluntario.FechaRegistro == null)
+                    {
+                        voluntario.FechaRegistro = DateTime.Now;
+                    }
                     string anio = voluntario.FechaRegistro.Value.Year.ToString();
                     string mes = voluntario.FechaRegistro.Value.Month.ToString();
                     string date = string.Empty;
-                    if (Convert.ToInt32(mes) >= 1 && Convert.ToInt32(mes) >= 6)
+                    if (Convert.ToInt32(mes) >= 1 && Convert.ToInt32(mes) <= 6)
                     {
                         date = string.Format("{0}-{1}", anio, "1");
                     }
@@ -210,7 +214,8 @@ namespace FUNSAR.Areas.API
             {
                 string err = string.Format("Documento participante: {0}," +
                     "Documento responsable: {1}," +
-                    "Correo responsable: {2}",
+                    "Correo responsable: {2}" + 
+                    "Error: {3}",
                 servicio.documentoP,
                 servicio.documentoR,
                 servicio.correoR,
@@ -393,6 +398,10 @@ namespace FUNSAR.Areas.API
                 if (dataPayment.Id == 1)
                 {
                     var voluntario = _contenedorTrabajo.Voluntario.GetFirstOrDefault(filter: v => v.Documento == dataClient.Documento);
+                    if (voluntario.FechaRegistro == null)
+                    {
+                        voluntario.FechaRegistro = DateTime.Now;
+                    }
                     string anio = voluntario.FechaRegistro.Value.Year.ToString();
                     string mes = voluntario.FechaRegistro.Value.Month.ToString();
                     string date = string.Empty;
@@ -457,16 +466,30 @@ namespace FUNSAR.Areas.API
                 voluntario = _contenedorTrabajo.Voluntario.GetFirstOrDefault(filter: i => i.Id == id);
                 if (voluntario != null)
                 {
-                    switch (voluntario.EstadoId)
+                    var param = _contenedorTrabajo.Params.GetFirstOrDefault(p => p.id == 9);
+                    if (param.Valor.Equals("SI"))
                     {
-                        case 1:
-                            voluntario.EstadoId = 2;
-                            break;
+                        switch (voluntario.EstadoId)
+                        {
+                            case 1:
 
-                        case 4:
-                            voluntario.EstadoId = 5;
-                            break;
+                                voluntario.EstadoId = 2;
+                                break;
+
+                            case 4:
+                                voluntario.EstadoId = 5;
+                                break;
+                        }
                     }
+                    else
+                    {
+                        var asistencias = _contenedorTrabajo.Asistencia.GetALL(filter: a => a.EstadoAsistenciaId == 1 && a.Voluntario.Id == voluntario.Id);
+                        if (asistencias.Count() >= 12)
+                        {
+                            voluntario.EstadoId = 5;
+                        }
+                    }
+                    
                     List<int> estadosIncompletos = new List<int> { 1,2,3,4 };
                     
                     if (estadosIncompletos.Contains(voluntario.EstadoId))

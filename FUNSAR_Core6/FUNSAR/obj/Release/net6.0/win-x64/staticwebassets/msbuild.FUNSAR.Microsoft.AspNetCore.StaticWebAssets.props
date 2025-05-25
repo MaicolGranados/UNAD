@@ -786,8 +786,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>czf1e8h34o</Fingerprint>
-      <Integrity>KMVbxy6j96kh0jIJxgE8G5sS+aiPB7VPTzEkaH0yA+g=</Integrity>
+      <Fingerprint>u7nldiv69x</Fingerprint>
+      <Integrity>NnJuJDgyty+/NQULoq94zUvE0igcBLOjjvCr+RCIxKg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\asistenciaDaily.js'))</OriginalItemSpec>
@@ -1020,8 +1020,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>gl1vd3zuhb</Fingerprint>
-      <Integrity>1OLaZxgkuYJS7pqqPraJHEMuxOkCBpzAp7pCRVydqk4=</Integrity>
+      <Fingerprint>ax7irpn3dl</Fingerprint>
+      <Integrity>YtiuJIJudl7RY5r+WZyoRRjst0o+QbKNeQ/oY34jmJc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Index.js'))</OriginalItemSpec>
@@ -1038,8 +1038,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>79te6d1fsh</Fingerprint>
-      <Integrity>ZYp8LXTtkz/l4z+qDSnjD5nuLIl66m5vwrerDD9Cb1Y=</Integrity>
+      <Fingerprint>vraj1lr2oy</Fingerprint>
+      <Integrity>SwL6PSqNwcBfqMeKUR2q0jH8GYAhmQgg0JwR6xwCkuM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\IndexLogin.js'))</OriginalItemSpec>
@@ -1074,8 +1074,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>acrxvx2du5</Fingerprint>
-      <Integrity>qgsrpFzvkI4B3Whqsp4Y2TixawL0gVhykB+NBWug4XU=</Integrity>
+      <Fingerprint>0r29huoa24</Fingerprint>
+      <Integrity>1KCstNWxwfOMRcGIZuri+tnLL3pMDbW/M4kaEOlmh3s=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\mercadopago.js'))</OriginalItemSpec>
@@ -2358,6 +2358,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Logs\LogERROR15022025115609.txt'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Logs\LogERROR1504202595525 .txt'))">
+      <SourceType>Package</SourceType>
+      <SourceId>FUNSAR</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FUNSAR</BasePath>
+      <RelativePath>Logs/LogERROR1504202595525 .txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5pio6zbp7q</Fingerprint>
+      <Integrity>qZZojETJUepea7m+sV02U5if4O9/Hr0eg73ivXFKzVk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Logs\LogERROR1504202595525 .txt'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Logs\LogERROR1610202470816p.txt'))">
       <SourceType>Package</SourceType>
       <SourceId>FUNSAR</SourceId>
@@ -2825,6 +2843,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Logs\LogERROR2302202434127p.txt'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Logs\LogERROR2305202575926 .txt'))">
+      <SourceType>Package</SourceType>
+      <SourceId>FUNSAR</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FUNSAR</BasePath>
+      <RelativePath>Logs/LogERROR2305202575926 .txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zzf68f4pog</Fingerprint>
+      <Integrity>f7rJgFv0C98ttMSWI2HHGQ91EdO09XL0OUWxiFjUJ30=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Logs\LogERROR2305202575926 .txt'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Logs\LogERROR2401202583514a.txt'))">
       <SourceType>Package</SourceType>

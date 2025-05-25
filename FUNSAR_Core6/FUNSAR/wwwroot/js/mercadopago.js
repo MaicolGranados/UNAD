@@ -27,7 +27,7 @@ document.getElementById('paymentForm').addEventListener('submit', function (even
     const id = service;
 
     function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const re = /^[^\s@]+@[^\s@]+\.(com|org|net|edu|gov|co|io|es)$/i;
         return re.test(email);
     }
 
@@ -197,18 +197,18 @@ function showDataPayment() {
                     labelDetail.innerHTML = '<h5><strong>Concepto pago: </strong></h5>' + responseData.data.detalle;
                     labelValue.innerHTML = '<h5><strong>Total a pagar: </strong></h5>' + '$' + formattedValue;
                 } else {
-                    document.getElementById('lblErrorValidate').textContent = 'Ocurrio un error obteniendo los datos de pago.';
+                    document.getElementById('lblErrorValidate').textContent = 'Ocurrio un error obteniendo los datos de pago. ID:1';
                     console.error('Financial institutions not found or empty.');
                     return;
                 }
             } else {
-                document.getElementById('lblErrorValidate').textContent = 'Ocurrio un error obteniendo los datos de pago.';
+                document.getElementById('lblErrorValidate').textContent = 'Ocurrio un error obteniendo los datos de pago. ID: 2';
                 console.error('Payment methods not found or empty.');
                 return;
             }
         })
         .catch(function (reason) {
-            document.getElementById('lblErrorValidate').textContent = 'Ocurrio un error obteniendo los datos de pago.';
+            document.getElementById('lblErrorValidate').textContent = 'Ocurrio un error obteniendo los datos de pago. ID: 3';
             console.error('Failed to get payment methods', reason);
             return;
         });

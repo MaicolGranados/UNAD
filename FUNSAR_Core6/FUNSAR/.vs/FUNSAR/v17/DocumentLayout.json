@@ -3,32 +3,76 @@
   "WorkspaceRootPath": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\api\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\api\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\admin\\controllers\\colegioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\admin\\controllers\\colegioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\wwwroot\\js\\colegiosgestor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:wwwroot\\js\\colegiosgestor.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\wwwroot\\js\\colegios.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:wwwroot\\js\\colegios.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\wwwroot\\js\\reportes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:wwwroot\\js\\reportes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\wwwroot\\js\\mercadopago.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:wwwroot\\js\\mercadopago.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\service\\processvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\service\\processvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\wwwroot\\js\\indexlogin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:wwwroot\\js\\indexlogin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\service\\paymentvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\service\\paymentvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\api\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\api\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\service\\processvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\service\\processvalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\admin\\controllers\\voluntarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\admin\\controllers\\voluntarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\cliente\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\cliente\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\cliente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\cliente\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\admin\\controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\admin\\controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\areas\\admin\\controllers\\asistenciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:areas\\admin\\controllers\\asistenciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|c:\\michi\\proyectos\\funsar\\funsar_core6\\funsar\\wwwroot\\js\\asistenciadaily.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5313CCE8-6D6E-4C3A-AC58-1CB4BCFABEBB}|FUNSAR.csproj|solutionrelative:wwwroot\\js\\asistenciadaily.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,98 +82,225 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "colegiosGestor.js",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\colegiosGestor.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\colegiosGestor.js",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\colegiosGestor.js",
+              "RelativeToolTip": "wwwroot\\js\\colegiosGestor.js",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-24T01:59:56.27Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ColegiosController.cs",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Admin\\Controllers\\ColegiosController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\ColegiosController.cs",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Admin\\Controllers\\ColegiosController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\ColegiosController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAMwFQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T01:58:40.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "colegios.js",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\colegios.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\colegios.js",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\colegios.js",
+              "RelativeToolTip": "wwwroot\\js\\colegios.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-24T01:58:30.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "reportes.js",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\reportes.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\reportes.js",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\reportes.js",
+              "RelativeToolTip": "wwwroot\\js\\reportes.js",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAwwLcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-24T01:37:52.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "mercadopago.js",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\mercadopago.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\mercadopago.js",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\mercadopago.js",
+              "RelativeToolTip": "wwwroot\\js\\mercadopago.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-24T01:37:49.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IndexLogin.js",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\IndexLogin.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\IndexLogin.js",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\IndexLogin.js",
+              "RelativeToolTip": "wwwroot\\js\\IndexLogin.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-24T00:40:47.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.js",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\Index.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\Index.js",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\Index.js",
+              "RelativeToolTip": "wwwroot\\js\\Index.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-24T00:15:12.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VoluntariosController.cs",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Admin\\Controllers\\VoluntariosController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\VoluntariosController.cs",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Admin\\Controllers\\VoluntariosController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\VoluntariosController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAMwGgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T23:35:41.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PagosController.cs",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Admin\\Controllers\\PagosController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\PagosController.cs",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Admin\\Controllers\\PagosController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\PagosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T02:15:48.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "asistenciaDaily.js",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\asistenciaDaily.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\asistenciaDaily.js",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\asistenciaDaily.js",
+              "RelativeToolTip": "wwwroot\\js\\asistenciaDaily.js",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAgwEoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-17T19:57:20.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AsistenciasController.cs",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Admin\\Controllers\\AsistenciasController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\AsistenciasController.cs",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Admin\\Controllers\\AsistenciasController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\AsistenciasController.cs",
+              "ViewState": "AgIAACwBAAAAAAAAAAAswAkBAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T19:56:16.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Cliente\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Cliente\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Cliente\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Cliente\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAWwA4BAACNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T14:56:42.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
               "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAYwA4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-06T20:02:46.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T20:02:46.701Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "ApiController.cs",
               "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\API\\ApiController.cs",
               "RelativeDocumentMoniker": "Areas\\API\\ApiController.cs",
               "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\API\\ApiController.cs",
               "RelativeToolTip": "Areas\\API\\ApiController.cs",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAMwC0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-06T19:56:20.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-06T19:46:06.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T19:46:06.667Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "PaymentValidationService.cs",
               "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Service\\PaymentValidationService.cs",
               "RelativeDocumentMoniker": "Areas\\Service\\PaymentValidationService.cs",
               "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Service\\PaymentValidationService.cs",
               "RelativeToolTip": "Areas\\Service\\PaymentValidationService.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowDkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADoAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T19:46:04.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T19:46:04.6Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "ProcessValidationService.cs",
               "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Service\\ProcessValidationService.cs",
               "RelativeDocumentMoniker": "Areas\\Service\\ProcessValidationService.cs",
               "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Service\\ProcessValidationService.cs",
               "RelativeToolTip": "Areas\\Service\\ProcessValidationService.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAowKEAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAowKEAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T19:46:03.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T19:46:03.975Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "mercadopago.js",
-              "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\mercadopago.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\mercadopago.js",
-              "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\wwwroot\\js\\mercadopago.js",
-              "RelativeToolTip": "wwwroot\\js\\mercadopago.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-06T19:46:00.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Cliente\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Areas\\Cliente\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\MICHI\\PROYECTOS\\FUNSAR\\FUNSAR_Core6\\FUNSAR\\Areas\\Cliente\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Areas\\Cliente\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAG0DAAAAAAAAAAAAAI8DAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAE8DAAAAAAAAAAAqwI8DAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T15:22:18.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-04T15:22:18.781Z"
             }
           ]
         }

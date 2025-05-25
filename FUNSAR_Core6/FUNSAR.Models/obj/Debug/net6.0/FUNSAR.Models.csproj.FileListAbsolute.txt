@@ -22,16 +22,3 @@ C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.dl
 C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\refint\FUNSAR.Models.dll
 C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.pdb
 C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\ref\FUNSAR.Models.dll
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\bin\Debug\net6.0\FUNSAR.Models.deps.json
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\bin\Debug\net6.0\FUNSAR.Models.dll
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\bin\Debug\net6.0\FUNSAR.Models.pdb
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.csproj.AssemblyReference.cache
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.GeneratedMSBuildEditorConfig.editorconfig
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.AssemblyInfoInputs.cache
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.AssemblyInfo.cs
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.csproj.CoreCompileInputs.cache
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.sourcelink.json
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.dll
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\refint\FUNSAR.Models.dll
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\FUNSAR.Models.pdb
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.Models\obj\Debug\net6.0\ref\FUNSAR.Models.dll
