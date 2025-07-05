@@ -1,7 +1,0 @@
-24/12/2024 1:26:52 p. m.
-CLASE: ReportesController.Generate()
-MENSAJE: System.ArgumentNullException: Value cannot be null. (Parameter 'source')
-   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
-   at System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)
-   at FUNSAR.Areas.Admin.Controllers.ReportesController.Generate(ReporteVM report) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\ReportesController.cs:line 506
-

@@ -1,0 +1,6 @@
+4/07/2025 10:36:15 p. m.
+CLASE: HomeController.Index(model)
+MENSAJE: System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at FUNSAR.Areas.Cliente.Controllers.HomeController.Index(HomeVM model, String documento) in C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 363
+

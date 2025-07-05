@@ -1,9 +1,0 @@
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\appsettings.Development.json
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\appsettings.json
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\FUNSAR.pdb
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\Microsoft.Data.SqlClient.SNI.dll
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\FUNSAR.AccesoDatos.pdb
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\FUNSAR.HerramientasComunes.pdb
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\FUNSAR.Models.pdb
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\FUNSAR.Utilidades.pdb
-C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\obj\Release\net6.0\win-x64\PubTmp\Out\FUNSAR.exe

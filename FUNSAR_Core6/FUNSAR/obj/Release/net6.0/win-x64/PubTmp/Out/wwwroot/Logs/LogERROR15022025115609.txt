@@ -1,4 +1,0 @@
-15/02/2025 11:56:09 p. m.
-CLASE: ApiController.pagoServicio()
-MENSAJE: Documento participante: 3838,Documento responsable: 1000136197,Correo responsable: maicolest2000@gmail.com
-

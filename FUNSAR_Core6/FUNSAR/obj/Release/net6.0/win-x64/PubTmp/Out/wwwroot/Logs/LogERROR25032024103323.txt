@@ -1,8 +1,0 @@
-25/03/2024 10:33:23 p. m.
-CLASE: HomeController.PDF()
-MENSAJE: System.ArgumentException: The key value at position 0 of the call to 'DbSet<Pagos>.Find' was of type 'long', which does not match the property type of 'int'.
-   at Microsoft.EntityFrameworkCore.Internal.EntityFinder`1.FindTracked(Object[] keyValues, IReadOnlyList`1& keyProperties)
-   at Microsoft.EntityFrameworkCore.Internal.EntityFinder`1.Find(Object[] keyValues)
-   at FUNSAR.AccesoDatos.Data.Repository.Repository`1.Get(Int64 id) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR.AccesoDatos\Data\Repository\Repository.cs:line 37
-   at FUNSAR.Areas.Cliente.Controllers.HomeController.Comprobante(Int64 paymentId) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 888
-

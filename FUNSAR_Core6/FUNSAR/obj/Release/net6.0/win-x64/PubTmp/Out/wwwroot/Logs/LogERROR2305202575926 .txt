@@ -1,6 +1,0 @@
-23/05/2025 7:59:26 p. m.
-CLASE: ApiController.pagoServicio()
-MENSAJE: Documento participante: 8701,Documento responsable: 1000136197,Correo responsable: maicolest2000@gmail.commError: System.InvalidOperationException: Nullable object must have a value.
-   at System.Nullable`1.get_Value()
-   at FUNSAR.Areas.API.ApiController.pagoServicios(servicioPago servicio) in C:\MICHI\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\API\ApiController.cs:line 45
-

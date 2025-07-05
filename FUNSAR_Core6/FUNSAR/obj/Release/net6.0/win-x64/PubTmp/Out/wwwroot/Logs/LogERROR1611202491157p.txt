@@ -1,5 +1,0 @@
-16/11/2024 9:11:57 p. m.
-CLASE: ReportesController.Generate()
-MENSAJE: System.InvalidCastException: Unable to cast object of type 'System.Linq.OrderedEnumerable`2[FUNSAR.Models.Asistencia,System.DateTime]' to type 'FUNSAR.Models.Asistencia'.
-   at FUNSAR.Areas.Admin.Controllers.ReportesController.Generate(ReporteVM report) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Admin\Controllers\ReportesController.cs:line 440
-

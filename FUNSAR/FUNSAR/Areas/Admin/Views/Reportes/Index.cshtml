@@ -1,0 +1,278 @@
+﻿@model FUNSAR.Models.ViewModels.ReporteVM
+@{
+    ViewData["Title"] = "Reportes";
+}
+
+<style>
+    .form-check-input {
+        width: 20px;
+        height: 20px;
+        border: 3px solid #2c3e50;
+        cursor: pointer;
+    }
+
+        .form-check-input:checked {
+            background-color: #212529;
+            border-color: #212529;
+        }
+</style>
+
+<div class="container mt-4">
+    <h2 class="text-primary">Generar Reportes</h2>
+
+    <br /><br />
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @id= "formReporte"}))
+    {
+        <div class="form-group row justify-content-center">
+            <div class="col-6">
+                @Html.DropDownListFor(m => m.ReporteSeleccionado, Model.ListaReporte, "-Seleccione el reporte a generar-",
+            new { @class = "form-select", @id = "reporteDropdown", @onchange = "resetForm()" })
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary" id="btnGenerar" disabled>Generar Reporte</button>
+            </div>
+        </div>
+
+        <div id="fechapagos" style="display: none;">
+            <div class="form-group row justify-content-center mt-2">
+                <div class="col-6">
+                    <label for="fechaIni">Fecha de inicio:</label>
+                    <input type="date" id="fechaIni" name="fechaIni" class="form-control" value="@Model.fechaIni?.ToString("yyyy-MM-dd")" />
+                </div>
+                <div class="col-6">
+                    <label for="fechaFin">Fecha de fin:</label>
+                    <input type="date" id="fechaFin" name="fechaFin" class="form-control" value="@Model.fechaFin?.ToString("yyyy-MM-dd")" />
+                </div>
+            </div>
+        </div>
+
+        <div id="fechaproceso" style="display: none;">
+            <div class="form-group row mt-3">
+                <div class="col-6">
+                    <select id="opcionesSemestre" name="opciones" class="form-select">
+                        <option value="default">Selecciona un Semestre</option>
+                        <option value="1">2024-1</option>
+                        <option value="2">2024-2</option>
+                        <option value="3">2025-1</option>
+                        <option value="4">2025-2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+
+        @if (!User.IsInRole(FUNSAR.Utilidades.CNT.Colegio))
+        {
+            <div id="divFiltroBrigada" style="display: none;">
+            <div class="form-group row mt-4">
+                <div class="form-check form-check-inline">
+                    @Html.CheckBoxFor(m => m.filtraBrigada, new { @id = "filtroBrigadaCheckbox", @class = "form-check-input", @onclick = "toggleFiltroBrigada()" })
+                    @Html.LabelFor(m => m.filtraBrigada, "Filtrar por brigada", new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="form-group row justify-content-center mt-2" id="divBrigada" style="display: none;">
+                <div class="col-6">
+                    @Html.DropDownListFor(m => m.brigada.Id, Model.listaBrigada, "-Seleccione la brigada--",
+            new { @class = "form-select", @id = "filtroBrigada"})
+                </div>
+            </div>
+            </div>
+        }else
+        {
+            <div id="divFiltroBrigada" style="display: none;">
+            </div>
+        }
+
+        <!-- Div para "Proceso Participante" -->
+        <div class="form-group row mt-4 justify-content-center" id="divProcesoParticipante" style="display:none;">
+            <h5>Los campos por defecto del reporte son:</h5>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Tipo Documento</th>
+                        <th>Documento</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Estado Proceso</th>
+                    </tr>
+                </thead>
+            </table>
+            <h5>Selecciona los campos a incluir en el reporte</h5>
+
+            <div class="form-group row mt-4 justify-content-center">
+                <div class="form-check form-check-inline">
+                    @Html.CheckBoxFor(m => m.asistenciaDia, new { @class = "form-check-input" })
+                    @Html.LabelFor(m => m.asistenciaDia, "Asistencia por día", new { @class = "form-check-label ms-2" })
+                </div>
+            </div>
+            <div class="form-group row mt-4 justify-content-center">
+                <div class="form-check form-check-inline">
+                    @Html.CheckBoxFor(m => m.salida, new { @class = "form-check-input" })
+                    @Html.LabelFor(m => m.salida, "Asistencia Salida", new { @class = "form-check-label ms-2" })
+                </div>
+            </div>
+            <div class="form-group row mt-4 justify-content-center">
+                <div class="form-check form-check-inline">
+                    @Html.CheckBoxFor(m => m.pfe, new { @class = "form-check-input" })
+                    @Html.LabelFor(m => m.pfe, "Estado Plan Familiar de Emergencias", new { @class = "form-check-label ms-2" })
+                </div>
+            </div>
+            @if (!User.IsInRole(FUNSAR.Utilidades.CNT.Colegio))
+            {
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.pago, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.pago, "Estado Pago de certificado", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+            }
+            
+        </div>
+
+        <!-- Div para "Pagos" -->
+        <div class="form-group row mt-4 justify-content-center" id="divPagos" style="display:none;">
+            <h5>Los campos por defecto del reporte son:</h5>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Tipo Documento</th>
+                        <th>Documento</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Referencia</th>
+                        <th>Fecha Pago</th>
+                        <th>Brigada</th>
+                    </tr>
+                </thead>
+            </table>
+            <h5>Selecciona los campos a incluir en el reporte</h5>
+            <div class="form-group row mt-4 justify-content-center">
+                <div class="form-check form-check-inline">
+                    @Html.CheckBoxFor(m => m.responsablePago, new { @id = "responsablePagoCheckbox", @class = "form-check-input", @onclick = "toggleResponsablePago()" })
+                    @Html.LabelFor(m => m.responsablePago, "Datos de la persona que realizó el pago.", new { @class = "form-check-label ms-2 fw-bold" })
+                </div>
+            </div>
+
+            <!-- Datos del responsable de pago -->
+            <div id="datosResponsablePago" style="display: none;">
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.rTipoDoc, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.rTipoDoc, "Tipo Documento", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.rDocumento, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.rDocumento, "Número Documento", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.rNombre, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.rNombre, "Nombres", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.rApellidos, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.rApellidos, "Apellidos", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.rCorreo, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.rCorreo, "Correo", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.rBanco, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.rBanco, "Banco", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 justify-content-center">
+                <div class="form-check form-check-inline">
+                    @Html.CheckBoxFor(m => m.acudiente, new { @id = "acudienteCheckbox", @class = "form-check-input", @onclick = "toggleAcudiente()" })
+                    @Html.LabelFor(m => m.acudiente, "Datos del acudiente", new { @class = "form-check-label ms-2 fw-bold" })
+                </div>
+            </div>
+
+            <!-- Datos del acudiente -->
+            <div id="datosAcudiente" style="display: none;">
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.aTipoDoc, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.aTipoDoc, "Tipo Documento", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.aDocumento, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.aDocumento, "Número Documento", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.aNombre, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.aNombre, "Nombres", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.aApellidos, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.aApellidos, "Apellidos", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.aCorreo, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.aCorreo, "Correo", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+                <div class="form-group row mt-4 justify-content-center">
+                    <div class="form-check form-check-inline">
+                        @Html.CheckBoxFor(m => m.aCelular, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.aCelular, "Celular", new { @class = "form-check-label ms-2" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Div para salidas-->
+        <div class="form-group row mt-4 justify-content-center" id="divSalidas" style="display:none;">
+            <h5>Los campos por defecto del reporte son:</h5>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Tipo Documento</th>
+                        <th>Documento</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Celular</th>
+                        <th>Correo</th>
+                        <th>Salida</th>
+                        <th>Estado Pago</th>
+                        <th>Referencia Pago</th>
+                        <th>Fecha Registro</th>
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+    }
+</div>
+
+<div id="loading" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:1000; text-align:center;">
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+        <img src="~/img/loading.gif" alt="Cargando..." style="width: 50%;" />
+        <p style="color:white;">Generando Reporte...</p>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/reportes.js"></script>
+}

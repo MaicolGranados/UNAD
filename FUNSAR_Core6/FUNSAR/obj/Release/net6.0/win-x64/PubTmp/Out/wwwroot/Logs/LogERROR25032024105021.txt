@@ -1,5 +1,0 @@
-25/03/2024 10:50:21 p. m.
-CLASE: HomeController.PDF()
-MENSAJE: System.NullReferenceException: Object reference not set to an instance of an object.
-   at FUNSAR.Areas.Cliente.Controllers.HomeController.Comprobante(Int64 paymentId) in C:\PROYECTOS\FUNSAR\FUNSAR_Core6\FUNSAR\Areas\Cliente\Controllers\HomeController.cs:line 889
-
